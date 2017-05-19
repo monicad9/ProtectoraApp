@@ -1,0 +1,25 @@
+
+.cartel_colabora{
+	margin-top: 2em;
+	border-radius: 20px;
+}
+
+.socio , .teamer, .voluntario{
+	margin:3em;
+}
+
+.teaming{
+	margin:2em;
+}
+
+
+cite{
+	border-bottom: 1px solid #3dbf4a;
+}
+
+blockquote{
+	border-left: 5px solid rgb(49, 195, 55) !important;
+	text-align: left;
+	font-size: 15px;
+}
+

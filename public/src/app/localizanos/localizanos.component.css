@@ -1,0 +1,51 @@
+
+.bloqDireccion{
+	display: inline-table;
+	/*margin-top: 2em;*/
+}
+
+.entrada{
+	width: 100%;
+	border-radius: 20px;
+	padding: 2em;
+}
+
+
+.sebm-google-map-container {
+  height: 500px;
+  width: 100%;
+}
+
+#map{
+	margin-top: 1em;
+	width:100%;
+	height:500px;
+}
+
+button{
+	background-color: #1188c4 !important;
+	margin-bottom: 4em !important;
+}
+
+.input-field .prefix.active{
+	color: #1188c4 !important;
+}
+
+
+input:not([type]):focus:not([readonly]),
+input:not([type=text]):focus:not([readonly]),
+input:not([type=password]):focus:not([readonly]),
+input:not([type=url]):focus:not([readonly]),
+input:not([type=time]):focus:not([readonly]),
+input:not([type=datetime]):focus:not([readonly]),
+input:not([type=datetime-local]):focus:not([readonly]),
+input:not([type=tel]):focus:not([readonly]),
+input:not([type=number]):focus:not([readonly]),
+input:not([type=search]):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]){
+	border-bottom: 1px solid #1188c4 !important;
+	box-shadow: 0 1px 0 0 #1188c4 !important;
+}
+textarea{
+	resize: vertical;
+}

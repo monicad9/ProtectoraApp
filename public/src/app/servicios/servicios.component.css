@@ -1,0 +1,85 @@
+@font-face{
+    font-family: 'servicesTitle';
+    src: url(../../fonts/AustieBostKittenKlub.ttf);
+}
+
+.servicios h3{
+    text-align: center;
+    font-family: servicesTitle;
+    margin-top:2em; 
+}
+
+h5{
+    text-align: center;
+    margin-bottom: 2em;
+    margin-top: 2em;
+
+}
+
+
+p{
+    font-size: 20px;
+    margin-left: 5em;
+    margin-right: 5em;
+    text-align: center;
+}
+
+.escuela{
+    border-radius: 25px;
+    margin-bottom: 5em;
+    margin-top: 2em;
+}
+
+.tamaño{
+    font-size: 24px;
+    text-align: center;
+
+}
+
+.perro-photo {
+    display: block;
+    width: 180px;
+    height: 180px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 90px;
+    margin: auto auto;
+    border: 8px solid #CCC;
+    -webkit-transition: border-color 1s; /* Safari */
+    transition: border-color 1s;
+}
+
+
+#precios [class*="col-"]:hover .perro-photo{
+    border-color: #1188c4;
+}
+
+.tamaño:after {
+    content: " ";
+    width: 110px;
+    height: 1px;
+    display: block;
+    border-bottom: 2px solid #1188c4;
+    margin: 10px auto auto auto;
+}
+
+/* TABLA DE PRECIOS */
+table{
+    margin-bottom: 5em;
+}
+
+thead{
+    font-size: 20px;
+    text-align: center;
+}
+
+th , td{
+    text-align: center;
+    padding: 0;
+}
+
+
+tbody{
+    font-size: 20px;
+}
+

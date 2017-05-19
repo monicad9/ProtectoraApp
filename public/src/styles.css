@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+
+@font-face{
+	font-family: 'servicesTitle';
+	src: url(./fonts/AustieBostKittenKlub.ttf);
+}
+
+
+h5:before, h5:after {
+    content: " ";
+    display: inline-block;
+    width: 50px;
+    height: 1px;
+    border: 1px solid #31c337;
+
+    top: 50%;
+}
+
+h5:before {
+    margin-right: 10px;
+    left: 20px;
+}
+
+h5:after {
+    margin-left: 10px;
+    right: 20px;
+}
+
+h5{
+    font-size: 1.5em !important;
+}
+
+h3.titulos{
+    text-align: center;
+    font-family: servicesTitle;
+    margin-top:2em;
+    margin-bottom: 1em; 
+    font-size: 34px;
+}
+
+footer{
+    font-size: 14px;
+}

@@ -1,0 +1,36 @@
+li{
+	list-style: none;
+	color:#effeff !important;
+	padding:5px;
+	text-align: center;
+}
+
+a{
+	list-style: none;
+	color:#effeff !important;
+}
+
+footer.page-footer{
+	background-color: rgb(17, 136, 196) !important;
+}
+
+
+.diputacionImg{
+	width: 130px;
+}
+
+h6{
+	margin-bottom: 0em;
+	padding:1em;
+	text-align: center;
+	background-color: #333333;
+	color:white;
+}
+
+.info{
+	text-align: justify;
+}
+
+h5{
+	font-size: 1.5em !important;
+}

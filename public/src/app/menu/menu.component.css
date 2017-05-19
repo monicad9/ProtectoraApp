@@ -1,0 +1,30 @@
+.logo{
+  height: 3.5em;
+}
+
+a{
+	color:#effeff !important;
+}
+
+a:link{
+	text-decoration: none;
+	font-size: 16px;
+}
+
+.navbar-inverse{
+	background-color: rgb(17, 136, 196) !important;
+	border-color:  rgb(17, 136, 196) !important;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar{
+  background-color: #f9f9f9 !important;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+    background-color: #2196F3;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover{
+	background-color: #2196F3;
+}
+
