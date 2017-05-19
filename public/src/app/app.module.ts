@@ -22,7 +22,7 @@ import { PortadaComponent } from './portada/portada.component';
 
 
 const routes: Routes = [
-    {path: 'Inicio' , component: IndexComponent},
+    {path: '' , component: IndexComponent},
     {path: 'About' , component: AboutComponent},
     {path: 'Localizanos' , component: LocalizanosComponent},
     {path: 'Servicios' , component: ServiciosComponent}, 
