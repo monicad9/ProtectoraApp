@@ -1,3 +1,280 @@
-<p>
-  listamascotas works!
-</p>
+<div class="row">
+	<h4>Lista de mascotas</h4>
+</div>
+
+<div class="row title">
+	<div>
+		<h5 style="float: left;">Listado completo</h5>
+	</div>
+</div>
+
+<div class="row">
+	
+    <div class="col-md-12">
+    
+    	<div class="table-responsive">
+            
+          	<table id="mytable" class="table table-bordred table-hover">
+               
+              	<thead>
+
+              		<th>Nº Chip</th>
+              		<th>Nombre</th>
+              		<th>Especie</th>
+              		<th>Género</th>
+              		<th>Estado</th>
+              		<th>Peso</th>
+              		<th>Edad</th>
+
+
+              	    <tr class="filters">
+                        <th><input type="text" class="form-control" placeholder="Nº Chip"></th>
+                        <th><input type="text" class="form-control" placeholder="Nombre"></th>
+
+                        <th>
+                        	<select name="especie" class="form-control">
+                            	<option value="cualquiera">Cualquiera</option>
+                                <option value="gato">Gato</option>
+                                <option value="perro">Perro</option>
+                                <option value="roedor">Roedor</option>
+                                <option value="reptil">Reptil</option>
+                			</select>
+                		</th>
+
+                        <th><select name="genero" class="form-control">
+                            	<option value="cualquiera">Cualquiera</option>
+                                <option value="hembra">Hembra</option>
+                                <option value="macho">Macho</option>
+                			</select>
+                		</th>
+
+                        <th>
+                            <select name="estado" class="form-control">
+                            	<option value="cualquiera">Cualquiera</option>
+                                <option value="disponible">Disponible</option>
+                                <option value="reservado">Reservado</option>
+                                <option value="enfermo">Enfermo</option>
+                                <option value="fallecido">Fallecido</option>
+                			</select>
+                		</th>
+
+                		<th>
+                            <select name="peso" class="form-control">
+                            	<option value="cualquiera">Cualquiera</option>
+                            	<option value="menos1">&#60; 1 kg</option>
+                                <option value="1a4">De 1 a 4 kg</option>
+                                <option value="4a8">De 4 a 8 kg</option>
+                                <option value="8a15">8kg a 15 kg</option>
+                                <option value="mas15">&#62; 15 kg</option>
+                			</select>
+                		</th>
+
+                        <th>
+                        	<select name="edad" class="form-control">
+                        		<option value="cualquiera">Cualquiera</option>
+                            	<option value="menos1"> &#60; 1 año </option>
+                                <option value="1a3">De 1 a 3 años</option>
+                                <option value="4a7">De 4 a 7 años</option>
+                                <option value="mas7"> &#62; 7 años</option>
+                			</select>
+                        </th>
+
+                        <th>
+                        	<button type="submit" class="btn btn-block btn-primary">Filtrar</button>
+                        </th>
+                    </tr>
+
+
+              	</thead>
+              	<tbody>
+
+              		<tr>
+              			<td>11111111111</td>
+              			<td>Chucho</td>
+              			<td>Perro</td>
+              			<td>Macho</td>
+              			<td>Disponible</td>
+              			<td>5.4</td>
+              			<td>2 años</td>												
+						<td class="table-actions">
+                            <div class="col-md-6 col-xs-6">
+                                <a href="http://demo.protecms.com/admin/panel/animals/736/edit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+       						 </div>
+                            <div class="col-md-6 col-xs-6">
+                                <a href="http://demo.protecms.com/admin/panel/animals/736/delete" class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+              		</tr>
+
+              		<tr>
+              			<td>11111111111</td>
+              			<td>Chucho</td>
+              			<td>Perro</td>
+              			<td>Macho</td>
+              			<td>Disponible</td>
+              			<td>5.4</td>
+              			<td>2 años</td>
+              			<td class="table-actions">
+                            <div class="col-md-6 col-xs-6">
+                                <a href="http://demo.protecms.com/admin/panel/animals/736/edit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+       						 </div>
+                            <div class="col-md-6 col-xs-6">
+                                <a href="http://demo.protecms.com/admin/panel/animals/736/delete" class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+              		</tr>
+
+
+              		<tr>
+              			<td>11111111111</td>
+              			<td>Chucho</td>
+              			<td>Perro</td>
+              			<td>Macho</td>
+              			<td>Disponible</td>
+              			<td>5.4</td>
+              			<td>2 años</td>
+              			<td class="table-actions">
+                            <div class="col-md-6 col-xs-6">
+                                <a href="http://demo.protecms.com/admin/panel/animals/736/edit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+       						 </div>
+                            <div class="col-md-6 col-xs-6">
+                                <a href="http://demo.protecms.com/admin/panel/animals/736/delete" class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+              		</tr>
+
+
+              		<tr>
+              			<td>11111111111</td>
+              			<td>Chucho</td>
+              			<td>Perro</td>
+              			<td>Macho</td>
+              			<td>Disponible</td>
+              			<td>5.4</td>
+              			<td>2 años</td>
+              			<td class="table-actions">
+                            <div class="col-md-6 col-xs-6">
+                                <a href="http://demo.protecms.com/admin/panel/animals/736/edit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+       						 </div>
+                            <div class="col-md-6 col-xs-6">
+                                <a href="http://demo.protecms.com/admin/panel/animals/736/delete" class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+              		</tr>
+
+              		<tr>
+              			<td>11111111111</td>
+              			<td>Chucho</td>
+              			<td>Perro</td>
+              			<td>Macho</td>
+              			<td>Disponible</td>
+              			<td>5.4</td>
+              			<td>2 años</td>
+              			<td class="table-actions">
+                            <div class="col-md-6 col-xs-6">
+                                <a href="http://demo.protecms.com/admin/panel/animals/736/edit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+       						 </div>
+                            <div class="col-md-6 col-xs-6">
+                                <a href="http://demo.protecms.com/admin/panel/animals/736/delete" class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+              		</tr>
+
+              	</tbody>
+
+          	</table>
+
+          	<div class="clearfix"></div>
+          	<ul class="pagination pull-right">
+          		<li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+          		<li class="active"><a href="#">1</a></li>
+          		<li><a href="#">2</a></li>
+          		<li><a href="#">3</a></li>
+          		<li><a href="#">4</a></li>
+          		<li><a href="#">5</a></li>
+          		<li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+          	</ul>
+
+      	</div>
+
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+				<h4 class="modal-title custom_align" id="Heading">Edita </h4>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<input class="form-control " type="text" placeholder="Mohsin">
+				</div>
+				<div class="form-group">
+
+					<input class="form-control " type="text" placeholder="Irshad">
+				</div>
+				<div class="form-group">
+					<textarea rows="2" class="form-control" placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
+
+
+				</div>
+			</div>
+			<div class="modal-footer ">
+				<button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Actualizar</button>
+			</div>
+		</div>
+		<!-- /.modal-content --> 
+	</div>
+	<!-- /.modal-dialog --> 
+</div>
+
+
+
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+				<h4 class="modal-title custom_align" id="Heading">Eliminar mascota</h4>
+			</div>
+			<div class="modal-body">
+
+				<div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> ¿Estás segur@ de que quieres borrar?</div>
+
+			</div>
+			<div class="modal-footer ">
+				<button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span>Sí</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+			</div>
+		</div>
+		<!-- /.modal-content --> 
+	</div>
+	<!-- /.modal-dialog --> 
+</div>
+
+	                        
+	                

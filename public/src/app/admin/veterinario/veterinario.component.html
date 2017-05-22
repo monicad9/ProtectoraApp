@@ -1,3 +1,404 @@
-<p>
-  veterinario works!
-</p>
+	    <div id="wrapper" class="toggled">
+
+
+	        <div id="page-content-wrapper">
+	            <div class="container-fluid">
+
+	                <div class="row">
+
+	                    <div class="col-lg-12">
+
+							<div class="row">
+	                        	<h4>Veterinarios</h4>
+	                        </div>
+
+	                        <div class="row title">
+	                        	<div>
+	                        		<h5 style="float: left;">Listado veterinarios</h5>
+	                        	</div>
+	                        </div>
+
+	                        <div class="row">
+	                        	<div class="table-responsive">
+	                        		<table id="mytable" class="table table-bordred table-hover">
+						                   
+							              	<thead>
+
+							              		<th>Nombre</th>
+							              		<th>Correo</th>
+							              		<th>Teléfono</th>
+							              		<th>Móvil</th>
+
+							              	    <tr class="filters">
+							                        <th><input type="text" class="form-control" placeholder="Nombre"></th>
+							                        <th><input type="text" class="form-control" placeholder="Correo"></th>
+							                        <th><input type="text" class="form-control" placeholder="Teléfono"></th>
+							                        <th><input type="text" class="form-control" placeholder="Móvil"></th>
+
+							                        <th>
+							                        	<button type="submit" class="btn btn-block btn-primary">Filtrar</button>
+							                        </th>
+							                    </tr>
+
+
+							              	</thead>
+							              	<tbody>
+
+							              		<tr>
+							              			<td>Veterinario</td>
+							              			<td>vet@gmail.com</td>
+							              			<td>958 00 00 00</td>
+							              			<td>635 00 00 00</td>
+							              											
+													<td class="table-actions">
+                                                        <div class="col-md-6 col-xs-6">
+					                                        <a href="http://demo.protecms.com/admin/panel/animals/736/edit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
+					                                            <i class="fa fa-edit"></i>
+					                                        </a>
+                                   						 </div>
+					                                    <div class="col-md-6 col-xs-6">
+					                                        <a href="http://demo.protecms.com/admin/panel/animals/736/delete" class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
+					                                            <i class="fa fa-trash"></i>
+					                                        </a>
+					                                    </div>
+                                                    </td>
+							              		</tr>
+							              	</tbody>
+							            </table>
+
+
+	                        	</div>
+
+	                        </div>
+
+
+	                        <div class="row">
+	                        	<h4>Lista de mascotas</h4>
+	                        </div>
+
+	                        <div class="row title">
+	                        	<div>
+	                        		<h5 style="float: left;">Listado datos veterinarios de mascotas</h5>
+	                        	</div>
+	                        </div>
+
+							<div class="row">
+								
+						        <div class="col-md-12">
+						        
+						        	<div class="table-responsive">
+						                
+						              	<table id="mytable" class="table table-bordred table-hover">
+						                   
+							              	<thead>
+
+							              		<th>Nº Chip</th>
+							              		<th>Esterilizado</th>
+							              		<th>Vacunado</th>
+							              		<th>Enfermedades</th>
+							              		<th>Régimen Especial</th>
+
+							              	    <tr class="filters">
+							                        <th><input type="text" class="form-control" placeholder="Nº Chip"></th>
+
+							                        <th>
+							                        	<select name="esterilizado" class="form-control">
+							                            	<option value="cualquiera">--Seleccionar--</option>
+		                                                    <option value="si">Sí</option>
+		                                                    <option value="no">No</option>
+                                            			</select>
+                                            		</th>
+
+							                        <th>
+							                        	<select name="vacunado" class="form-control">
+							                            	<option value="cualquiera">--Seleccionar--</option>
+		                                                    <option value="si">Sí</option>
+		                                                    <option value="no">No</option>
+                                            			</select>
+                                            		</th>
+
+							                        <th>
+							                        	<select name="enfermedades" class="form-control">
+							                            	<option value="cualquiera">--Seleccionar--</option>
+		                                                    <option value="si">Sí</option>
+		                                                    <option value="no">No</option>
+                                            			</select>
+                                            		</th>
+
+                                            		<th>
+							                        	<select name="regimen" class="form-control">
+							                            	<option value="cualquiera">--Seleccionar--</option>
+		                                                    <option value="si">Sí</option>
+		                                                    <option value="no">No</option>
+                                            			</select>
+                                            		</th>
+
+
+							                        <th>
+							                        	<button type="submit" class="btn btn-block btn-primary">Filtrar</button>
+							                        </th>
+							                    </tr>
+
+
+							              	</thead>
+							              	<tbody>
+
+							              		<tr>
+							              			<td>11111111111</td>
+							              			<td>No</td>
+							              			<td>Sí <div class="info"><i class="fa fa-file-text-o" aria-hidden="true" data-toggle="modal" data-target="#vacunas"></i></div></td>
+							              			<td>No <div class="info"><i class="fa fa-file-text-o" aria-hidden="true" data-toggle="modal" data-target="#enfermedades"></i></div></td>
+							              			<td>No <div class="info"><i class="fa fa-file-text-o" aria-hidden="true" data-toggle="modal" data-target="#regimen"></i></div></td>										
+													<td class="table-actions">
+                                                        <div class="col-md-6 col-xs-6">
+					                                        <a href="http://demo.protecms.com/admin/panel/animals/736/edit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
+					                                            <i class="fa fa-edit"></i>
+					                                        </a>
+                                   						 </div>
+					                                    <div class="col-md-6 col-xs-6">
+					                                        <a href="http://demo.protecms.com/admin/panel/animals/736/delete" class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
+					                                            <i class="fa fa-trash"></i>
+					                                        </a>
+					                                    </div>
+                                                    </td>
+							              		</tr>
+
+							              		<tr>
+							              			<td>11111111111</td>
+							              			<td>No</td>
+							              			<td>Sí <div class="info"><i class="fa fa-file-text-o" aria-hidden="true" data-toggle="modal" data-target="#vacunas"></i></div></td>
+							              			<td>No <div class="info"><i class="fa fa-file-text-o" aria-hidden="true" data-toggle="modal" data-target="#enfermedades"></i></div></td>
+							              			<td>No <div class="info"><i class="fa fa-file-text-o" aria-hidden="true" data-toggle="modal" data-target="#regimen"></i></div></td>										
+													<td class="table-actions">
+                                                        <div class="col-md-6 col-xs-6">
+					                                        <a href="http://demo.protecms.com/admin/panel/animals/736/edit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
+					                                            <i class="fa fa-edit"></i>
+					                                        </a>
+                                   						 </div>
+					                                    <div class="col-md-6 col-xs-6">
+					                                        <a href="http://demo.protecms.com/admin/panel/animals/736/delete" class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
+					                                            <i class="fa fa-trash"></i>
+					                                        </a>
+					                                    </div>
+                                                    </td>
+							              		</tr>
+
+
+							              		<tr>
+							              			<td>11111111111</td>
+							              			<td>No</td>
+							              			<td>Sí <div class="info"><i class="fa fa-file-text-o" aria-hidden="true" data-toggle="modal" data-target="#vacunas"></i></div></td>
+							              			<td>No <div class="info"><i class="fa fa-file-text-o" aria-hidden="true" data-toggle="modal" data-target="#enfermedades"></i></div></td>
+							              			<td>No <div class="info"><i class="fa fa-file-text-o" aria-hidden="true" data-toggle="modal" data-target="#regimen"></i></div></td>										
+													<td class="table-actions">
+                                                        <div class="col-md-6 col-xs-6">
+					                                        <a href="http://demo.protecms.com/admin/panel/animals/736/edit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
+					                                            <i class="fa fa-edit"></i>
+					                                        </a>
+                                   						 </div>
+					                                    <div class="col-md-6 col-xs-6">
+					                                        <a href="http://demo.protecms.com/admin/panel/animals/736/delete" class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
+					                                            <i class="fa fa-trash"></i>
+					                                        </a>
+					                                    </div>
+                                                    </td>
+							              		</tr>
+
+
+							              		<tr>
+							              			<td>11111111111</td>
+							              			<td>No</td>
+							              			<td>Sí <div class="info"><i class="fa fa-file-text-o" aria-hidden="true" data-toggle="modal" data-target="#vacunas"></i></div></td>
+							              			<td>No <div class="info"><i class="fa fa-file-text-o" aria-hidden="true" data-toggle="modal" data-target="#enfermedades"></i></div></td>
+							              			<td>No <div class="info"><i class="fa fa-file-text-o" aria-hidden="true" data-toggle="modal" data-target="#regimen"></i></div></td>										
+													<td class="table-actions">
+                                                        <div class="col-md-6 col-xs-6">
+					                                        <a href="http://demo.protecms.com/admin/panel/animals/736/edit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
+					                                            <i class="fa fa-edit"></i>
+					                                        </a>
+                                   						 </div>
+					                                    <div class="col-md-6 col-xs-6">
+					                                        <a href="http://demo.protecms.com/admin/panel/animals/736/delete" class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
+					                                            <i class="fa fa-trash"></i>
+					                                        </a>
+					                                    </div>
+                                                    </td>
+							              		</tr>
+
+							              		<tr>
+							              			<td>11111111111</td>
+							              			<td>No</td>
+							              			<td>Sí <div class="info"><i class="fa fa-file-text-o" aria-hidden="true" data-toggle="modal" data-target="#vacunas"></i></div></td>
+							              			<td>No <div class="info"><i class="fa fa-file-text-o" aria-hidden="true" data-toggle="modal" data-target="#enfermedades"></i></div></td>
+							              			<td>No <div class="info"><i class="fa fa-file-text-o" aria-hidden="true" data-toggle="modal" data-target="#regimen"></i></div></td>											
+													<td class="table-actions">
+                                                        <div class="col-md-6 col-xs-6">
+					                                        <a href="http://demo.protecms.com/admin/panel/animals/736/edit" class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
+					                                            <i class="fa fa-edit"></i>
+					                                        </a>
+                                   						 </div>
+					                                    <div class="col-md-6 col-xs-6">
+					                                        <a href="http://demo.protecms.com/admin/panel/animals/736/delete" class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
+					                                            <i class="fa fa-trash"></i>
+					                                        </a>
+					                                    </div>
+                                                    </td>
+							              		</tr>
+
+							              	</tbody>
+
+						              	</table>
+
+						              	<div class="clearfix"></div>
+						              	<ul class="pagination pull-right">
+						              		<li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+						              		<li class="active"><a href="#">1</a></li>
+						              		<li><a href="#">2</a></li>
+						              		<li><a href="#">3</a></li>
+						              		<li><a href="#">4</a></li>
+						              		<li><a href="#">5</a></li>
+						              		<li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+						              	</ul>
+
+						          	</div>
+
+						     	</div>
+
+						  	</div>
+
+							<!-- MODAL PARA EDITAR MASCOTA -->
+
+							<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+											<h4 class="modal-title custom_align" id="Heading">Edita </h4>
+										</div>
+										<div class="modal-body">
+											<div class="form-group">
+												<input class="form-control " type="text" placeholder="Mohsin">
+											</div>
+											<div class="form-group">
+
+												<input class="form-control " type="text" placeholder="Irshad">
+											</div>
+											<div class="form-group">
+												<textarea rows="2" class="form-control" placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
+											</div>
+										</div>
+										<div class="modal-footer ">
+											<button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Actualizar</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+							<!--  MODAL PARA ELIMINAR MASCOTA -->
+
+							<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+											<h4 class="modal-title custom_align" id="Heading">Eliminar mascota</h4>
+										</div>
+										<div class="modal-body">
+
+											<div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> ¿Estás segur@ de que quieres borrar?</div>
+
+										</div>
+										<div class="modal-footer ">
+											<button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span>Sí</button>
+											<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+										</div>
+									</div>
+									
+								</div>
+								
+							</div>
+
+							<!--  MODAL PARA LAS VACUNAS  -->
+	                        
+							<div class="modal fade" id="vacunas" tabindex="-1" role="dialog" aria-labelledby="vacunas" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+											<h4 class="modal-title custom_align" id="Heading">Vacunas puestas</h4>
+										</div>
+										<div class="modal-body">
+
+											<li>Rábica</li>
+											<li>Parvo</li>
+											<li>Hepatitis</li>
+
+
+										</div>
+										<div class="modal-footer ">
+											<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Cerrar</button>
+										</div>
+									</div>
+									
+								</div>
+					
+							</div>
+
+
+
+							<!-- MODAL PARA ENFERMEDADES -->
+
+							<div class="modal fade" id="enfermedades" tabindex="-1" role="dialog" aria-labelledby="enfermedades" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+											<h4 class="modal-title custom_align" id="Heading">Enfermedades</h4>
+										</div>
+										<div class="modal-body">
+
+											<li>Leishmaniosis</li>
+
+										</div>
+										<div class="modal-footer ">
+											<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Cerrar</button>
+										</div>
+									</div>
+									
+								</div>
+					
+							</div>
+
+							<!--  MODAL PARA RÉGIMEN ESPECIAL  -->
+
+							<div class="modal fade" id="regimen" tabindex="-1" role="dialog" aria-labelledby="regimen" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+											<h4 class="modal-title custom_align" id="Heading">Régimen especial</h4>
+										</div>
+										<div class="modal-body">
+
+											<li>Ninguno</li>
+										
+										</div>
+										<div class="modal-footer ">
+											<button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Cerrar</button>
+										</div>
+									</div>
+									
+								</div>
+					
+							</div>
+
+	                    </div>
+
+	                </div>
+
+	            </div>
+	        </div>
+
+
+	    </div>

@@ -1,0 +1,19 @@
+.btn-default {
+    color: white;
+    background-color: #885291;
+    border-color: #885291;
+}
+
+.info{
+	margin-left: 1em;
+	cursor: pointer;
+	display: -webkit-inline-box;
+}
+
+td{
+	text-align: center;
+}
+
+li{
+	list-style: none;
+}

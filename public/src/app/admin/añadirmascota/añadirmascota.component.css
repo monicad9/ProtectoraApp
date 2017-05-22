@@ -1,0 +1,35 @@
+.title{
+	background-color: #ececec;
+	padding: 10px;
+	
+}
+*[role="form"] {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 0.3em;
+}
+
+*[role="form"] h2 {
+    margin-left: 5em;
+    margin-bottom: 1em;
+}
+
+.btn-default {
+    color: white;
+    background-color: #885291;
+    border-color: #885291;
+}
+
+textarea{
+	resize: vertical;
+}
+
+form{
+	margin-bottom: 4em !important;
+}
+
+.registrar{
+	margin-top: 2em;
+}

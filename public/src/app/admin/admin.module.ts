@@ -13,6 +13,7 @@ import { LibroacogidasComponent } from './libroacogidas/libroacogidas.component'
 import { LibroreservasComponent } from './libroreservas/libroreservas.component';
 import { VeterinarioComponent } from './veterinario/veterinario.component';
 import { AdminComponent } from './admin.component';
+import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import { AdminComponent } from './admin.component';
   	LibroacogidasComponent, 
   	LibroreservasComponent, 
   	VeterinarioComponent,
-  	AdminComponent]
+  	AdminComponent,
+  	MenuLateralComponent]
 })
 export class AdminModule { }
