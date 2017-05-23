@@ -13,6 +13,7 @@ import { PanelimagesComponent } from './panelimages/panelimages.component';
 import { PaneltareasComponent } from './paneltareas/paneltareas.component';
 import { RegistrarvoluntariosComponent } from './registrarvoluntarios/registrarvoluntarios.component';
 import { VeterinarioComponent } from './veterinario/veterinario.component';
+import { LoginComponent } from './login/login.component';
 
 
 
