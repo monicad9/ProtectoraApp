@@ -15,46 +15,36 @@ import { RegistrarvoluntariosComponent } from './registrarvoluntarios/registrarv
 import { VeterinarioComponent } from './veterinario/veterinario.component';
 import { LoginComponent } from './login/login.component';
 
+import { LoginGuardService } from './services/login-guard.service';
 
 
 const routes_admin: Routes = [
 
-	{path: 'admin', component: AdminComponent, 
+	{path: 'admin', 
+		component: AdminComponent, 
+		canActivate:[LoginGuardService], 
 		children: [
 			{
-				path: '', component: PanelindexComponent
-			},
-			{
-				path: 'añadirmascota', component: AñadirmascotaComponent
-			},
-			{
-				path: 'editarvoluntarios', component: EditarvoluntariosComponent
-			},
-			{
-				path: 'libroacogidas', component: LibroacogidasComponent
-			},
-			{
-				path: 'libroreservas', component: LibroreservasComponent
-			},
-			{
-				path: 'listamascotas', component: ListamascotasComponent
-			},
-			{
-				path: 'panelimages', component: PanelimagesComponent
-			},
-			{
-				path: 'paneltareas', component: PaneltareasComponent
-			},
-			{
-				path: 'registrarvoluntarios', component: RegistrarvoluntariosComponent
-			},
-			{
-				path: 'veterinario', component: VeterinarioComponent
-			}
+				path: '',
+				canActivateChild : [LoginGuardService],
+
+				children : [
+					{path: '', component: PanelindexComponent},
+					{path: 'añadirmascota', component: AñadirmascotaComponent},
+					{path: 'editarvoluntarios', component: EditarvoluntariosComponent},
+					{path: 'libroacogidas', component: LibroacogidasComponent},
+					{path: 'libroreservas', component: LibroreservasComponent},
+					{path: 'listamascotas', component: ListamascotasComponent},
+					{path: 'panelimages', component: PanelimagesComponent},
+					{path: 'paneltareas', component: PaneltareasComponent},
+					{path: 'registrarvoluntarios', component: RegistrarvoluntariosComponent},
+					{path: 'veterinario', component: VeterinarioComponent}
+
+				]
+			}			
 		]
 	}
 ];
-
 
 
 @NgModule({

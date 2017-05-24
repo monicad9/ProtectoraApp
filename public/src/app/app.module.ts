@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { PublicoModule } from './publico/publico.module';
 import { AdminModule } from './admin/admin.module';
 
+import { LoginService } from './admin/services/login.service';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import { AdminModule } from './admin/admin.module';
     AdminModule,
     PublicoModule  
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
