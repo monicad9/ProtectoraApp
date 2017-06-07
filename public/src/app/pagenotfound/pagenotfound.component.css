@@ -1,4 +1,13 @@
-		@keyframes head {
+#back{
+    float: right;
+    background: #4f8edb;
+    border-color: #4f8edb;
+    color: white;
+    padding: 15px;
+  }
+
+
+@keyframes head {
   0% {
     transform: rotate(0);
   }

@@ -2,10 +2,14 @@
   "name": "app_completa",
   "version": "1.0.0",
   "description": "Proyecto Final del ciclo",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Monica D",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.15.3",
+    "mongoose": "^4.10.5"
+  }
 }
