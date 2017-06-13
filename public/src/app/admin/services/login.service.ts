@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
-import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
+import {Http, Response, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/delay';
-
-
-declare var escape: any; //Transformar los espacios en url
+import 'rxjs/add/operator/map';
 
 
 @Injectable()
@@ -17,16 +15,22 @@ export class LoginService {
 	isLoggedIn: boolean = false;
 	
 	constructor(private http: Http) {
-		this.url = "http://localhost/login"; 
+		this.url = "http://localhost:3000/login"; 
 	}
-
-	//Function works correctly without the ajax petition
 
 	check(email,pass) : Observable<boolean> {
+		let datos = {
+			"email": email,
+			"pass" : pass
+		};
 
-		if (email == 'admin@gmail.com' && pass=='1234'){
-			return Observable.of(true).delay(1000).do(val => this.isLoggedIn = true);
-		}
+		let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
+		let options = new RequestOptions ({ headers : headers});
+
+		this.http.post(this.url + "?datoslogin="+ JSON.stringify(datos), options)
+			.map((res) => res.json())
+			.subscribe(res => this.isLoggedIn = res.logged)
+		
+		return Observable.of(true).delay(1000);
 	}
-
 }

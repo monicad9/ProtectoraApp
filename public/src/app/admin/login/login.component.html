@@ -1,7 +1,7 @@
 <div class="container">
 
     <div class="row" id="pwd-container">
-    
+
         <div class="col-md-4"></div>
         
         <div class="col-md-4">
@@ -9,9 +9,9 @@
                 <form method="post" action="#" role="login">
                     <img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive" alt="" />
                     <input type="email" name="email" placeholder="Email" required class="form-control input-lg" [(ngModel)]="email" >
-                  
+
                     <input type="password" name="pass" class="form-control input-lg" id="password" placeholder="Password" required [(ngModel)]="pass" >                
-                  
+
                     <button type="submit" name="go" class="btn btn-lg btn-primary btn-block" (click)="comprobar()">Entrar</button>
 
                 </form>
@@ -21,6 +21,23 @@
         <div class="col-md-4"></div>
 
 
+    </div>
+
+    <div class="modal fade error" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                     <h4 class="modal-title">Error</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Datos incorrectos. Vuelva a intentarlo</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>

@@ -22,6 +22,7 @@ import { LoginComponent } from './login/login.component';
 
 import { LoginService } from './services/login.service';
 import { LoginGuardService } from './services/login-guard.service';
+import { CRUDService } from './services/crud.service';
 
 @NgModule({
   imports: [
@@ -45,6 +46,6 @@ import { LoginGuardService } from './services/login-guard.service';
   	MenuLateralComponent,
   	LoginComponent],
 
-  providers: [LoginService, LoginGuardService],
+  providers: [LoginService, LoginGuardService, CRUDService],
 })
 export class AdminModule { }

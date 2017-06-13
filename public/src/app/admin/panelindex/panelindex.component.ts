@@ -10,6 +10,8 @@ export class PanelindexComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+
   }
 
 }

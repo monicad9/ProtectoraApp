@@ -25,16 +25,14 @@ export class LoginComponent implements OnInit {
 
 	comprobar(){
 
-		this.loginService.check(this.email,this.pass).subscribe(() => {
-		
-			if( this.loginService.check(this.email, this.pass) ){
-
-				if (this.loginService.isLoggedIn) {
-
-					let redirect = this.loginService.redirectUrl ? this.loginService.redirectUrl : '/admin';
-					this.router.navigate([redirect]);
-				}
-			}
+		this.loginService.check(this.email,this.pass).subscribe(() => {	
+			if (this.loginService.isLoggedIn) {
+				//let redirect = this.loginService.redirectUrl ? this.loginService.redirectUrl : '/admin';
+				this.router.navigate(['/admin']);
+			}	
+			else{
+				$(".error").modal("toggle");
+			}		
 		})
 	}
 }

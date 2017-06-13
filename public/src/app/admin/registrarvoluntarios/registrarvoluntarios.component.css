@@ -23,3 +23,13 @@
     background-color: #885291;
     border-color: #885291;
 }
+
+.nodata .modal-title, .dataerror .modal-title{
+    color: red;
+    text-transform: uppercase;
+}
+
+
+.modal-title, .modal-body{
+    text-align: center;
+}

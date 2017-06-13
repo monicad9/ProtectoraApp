@@ -1,3 +1,147 @@
-<p>
-  editarvoluntarios works!
-</p>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <div class="row">
+                <h4>Lista de voluntarios</h4>
+            </div>
+
+            <div class="row title">
+                <div>
+                    <h5 style="float: left;">Listado completo</h5>
+                </div>
+            </div>
+
+            <div class="row">
+                
+                <div class="col-md-12">
+                
+                    <div class="table-responsive">
+                        
+                        <table id="mytable" class="table table-bordred table-hover">
+                           
+                            <thead>
+
+                                <th>DNI</th>
+                                <th>Nombre</th>
+                                <th>Apellidos</th>
+                                <th>Email</th>
+                                <th>Dirección</th>
+                                <th>Teléfono</th>
+                                <th>Móvil</th>
+                                <th>Género</th>
+
+
+                            </thead>
+                            <tbody *ngFor="let datos of array_voluntarios[0].docs">
+
+
+                                <tr>
+                                    <td>{{datos.dni}}</td>
+                                    <td>{{datos.nombre}}</td>
+                                    <td>{{datos.apellidos}}</td>
+                                    <td>{{datos.email}}</td>
+                                    <td>{{datos.direccion}}</td>
+                                    <td>{{datos.telefono}}</td>
+                                    <td>{{datos.movil}}</td>     
+                                    <td>{{datos.genero}}</td>                                         
+                                    <td class="table-actions">
+                                        <div class="col-md-6 col-xs-6">
+                                            <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                         </div>
+                                        <div class="col-md-6 col-xs-6">
+                                            <a class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                        <div class="clearfix"></div>
+	                        <ul class="pagination pull-right">
+	                            <ul class="pager">
+
+								    <li><a (click)="previous()">&larr; Previous</a></li>
+								    <li><a (click)="next()">Next &rarr;</a></li>
+								</ul>
+	                        </ul>
+
+                    	</div>
+                    </div>
+              	</div>
+         
+
+
+
+            <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                            <h4 class="modal-title custom_align" id="Heading">Edita </h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <input class="form-control " type="text" placeholder="Mohsin">
+                            </div>
+                            <div class="form-group">
+
+                                <input class="form-control " type="text" placeholder="Irshad">
+                            </div>
+                            <div class="form-group">
+                                <textarea rows="2" class="form-control" placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
+
+
+                            </div>
+                        </div>
+                        <div class="modal-footer ">
+                            <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Actualizar</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content --> 
+                </div>
+                <!-- /.modal-dialog --> 
+            </div>
+
+
+
+            <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                            <h4 class="modal-title custom_align" id="Heading">Eliminar mascota</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> ¿Estás segur@ de que quieres borrar?</div>
+
+                        </div>
+                        <div class="modal-footer ">
+                            <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span>Sí</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content --> 
+                </div>
+                <!-- /.modal-dialog --> 
+            </div>
+
+            
+        </div>
+
+    </div>
+
+</div>
+
+
+
