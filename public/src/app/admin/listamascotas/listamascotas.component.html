@@ -6,7 +6,7 @@
         <div class="col-lg-12">
 
             <div class="row">
-                <h4>Lista de mascotas</h4>
+                <h3 class="titulos">Lista de mascotas</h3>
             </div>
 
             <div class="row title">
@@ -21,20 +21,23 @@
                 
                     <div class="table-responsive">
                         
-                        <table id="mytable" class="table table-bordred table-hover">
+                        <table *ngIf="array_mascotas[0]!=undefined" id="mytable" class="table table-bordred table-hover">
                            
                             <thead>
-
                                 <th>Nº Chip</th>
                                 <th>Nombre</th>
                                 <th>Especie</th>
+                                <th>Raza</th>
                                 <th>Género</th>
+                                <th>Peso (KG)</th>
+                                <th>Largo</th>
+                                <th>Alto</th>
                                 <th>Estado</th>
-                                <th>Peso</th>
-                                <th>Edad</th>
+                                <th>Nacimiento</th>
+                                <th>Descripcion</th>
 
 
-                                <tr class="filters">
+<!--                            <tr class="filters">
                                     <th><input type="text" class="form-control" placeholder="Nº Chip"></th>
                                     <th><input type="text" class="form-control" placeholder="Nombre"></th>
 
@@ -90,117 +93,32 @@
                                         <button type="submit" class="btn btn-block btn-primary">Filtrar</button>
                                     </th>
                                 </tr>
-
+ -->
 
                             </thead>
-                            <tbody>
+                            <tbody *ngFor="let datos of array_mascotas[0].docs">
 
                                 <tr>
-                                    <td>11111111111</td>
-                                    <td>Chucho</td>
-                                    <td>Perro</td>
-                                    <td>Macho</td>
-                                    <td>Disponible</td>
-                                    <td>5.4</td>
-                                    <td>2 años</td>                                             
+                                    <td>{{datos.chip}}</td>
+                                    <td>{{datos.nombre}}</td>
+                                    <td class=especie{{datos.chip}}>{{datos.especie}}</td>
+                                    <td>{{datos.raza}}</td>
+                                    <td class=genero{{datos.chip}}>{{datos.genero}}</td>
+                                    <td>{{datos.peso}}</td>
+                                    <td>{{datos.largo}}</td>
+                                    <td>{{datos.altura}}</td>
+                                    <td class=estado{{datos.chip}}>{{datos.estado}}</td>
+                                    <td>{{datos.nacimiento}}</td>  
+                                    <td>{{datos.descripcion}}</td>   
+
                                     <td class="table-actions">
                                         <div class="col-md-6 col-xs-6">
-                                            <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
+                                            <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit{{datos.chip}}" (click)="editarMascota(datos.chip)">
                                                 <i class="fa fa-edit"></i>
                                             </a>
                                          </div>
                                         <div class="col-md-6 col-xs-6">
-                                            <a class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
-                                                <i class="fa fa-trash"></i>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>11111111111</td>
-                                    <td>Chucho</td>
-                                    <td>Perro</td>
-                                    <td>Macho</td>
-                                    <td>Disponible</td>
-                                    <td>5.4</td>
-                                    <td>2 años</td>
-                                    <td class="table-actions">
-                                        <div class="col-md-6 col-xs-6">
-                                            <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
-                                                <i class="fa fa-edit"></i>
-                                            </a>
-                                         </div>
-                                        <div class="col-md-6 col-xs-6">
-                                            <a class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
-                                                <i class="fa fa-trash"></i>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-
-
-                                <tr>
-                                    <td>11111111111</td>
-                                    <td>Chucho</td>
-                                    <td>Perro</td>
-                                    <td>Macho</td>
-                                    <td>Disponible</td>
-                                    <td>5.4</td>
-                                    <td>2 años</td>
-                                    <td class="table-actions">
-                                        <div class="col-md-6 col-xs-6">
-                                            <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
-                                                <i class="fa fa-edit"></i>
-                                            </a>
-                                         </div>
-                                        <div class="col-md-6 col-xs-6">
-                                            <a class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
-                                                <i class="fa fa-trash"></i>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-
-
-                                <tr>
-                                    <td>11111111111</td>
-                                    <td>Chucho</td>
-                                    <td>Perro</td>
-                                    <td>Macho</td>
-                                    <td>Disponible</td>
-                                    <td>5.4</td>
-                                    <td>2 años</td>
-                                    <td class="table-actions">
-                                        <div class="col-md-6 col-xs-6">
-                                            <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
-                                                <i class="fa fa-edit"></i>
-                                            </a>
-                                         </div>
-                                        <div class="col-md-6 col-xs-6">
-                                            <a class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
-                                                <i class="fa fa-trash"></i>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>11111111111</td>
-                                    <td>Chucho</td>
-                                    <td>Perro</td>
-                                    <td>Macho</td>
-                                    <td>Disponible</td>
-                                    <td>5.4</td>
-                                    <td>2 años</td>
-                                    <td class="table-actions">
-                                        <div class="col-md-6 col-xs-6">
-                                            <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
-                                                <i class="fa fa-edit"></i>
-                                            </a>
-                                         </div>
-                                        <div class="col-md-6 col-xs-6">
-                                            <a class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
+                                            <a class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete" (click)="borrarMascota(datos.chip)">
                                                 <i class="fa fa-trash"></i>
                                             </a>
                                         </div>
@@ -211,8 +129,12 @@
 
                         </table>
 
+                        <div class="col-md-6 col-md-offset-4">                        
+                            <img *ngIf="array_mascotas[0]==undefined" src="../imagenes/loader.gif" style="text-align: center;">
+                        </div>
+
                         <div class="clearfix"></div>
-                        <ul class="pagination pull-right">
+<!--                         <ul class="pagination pull-right">
                             <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
                             <li class="active"><a href="#">1</a></li>
                             <li><a href="#">2</a></li>
@@ -220,7 +142,7 @@
                             <li><a href="#">4</a></li>
                             <li><a href="#">5</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-                        </ul>
+                        </ul> -->
 
                     </div>
 
@@ -228,35 +150,91 @@
           </div>
 
 
-
-            <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                            <h4 class="modal-title custom_align" id="Heading">Edita </h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <input class="form-control " type="text" placeholder="Mohsin">
+            <div *ngIf="array_mascotas[0]!=undefined">
+               
+                <div *ngFor="let editar of array_mascotas[0].docs" class="modal fade" id="editar{{editar.chip}}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                                <h4 class="modal-title custom_align" id="Heading">Editando a: {{editar.chip}} </h4>
                             </div>
-                            <div class="form-group">
+                             <div  class="modal-body">
 
-                                <input class="form-control " type="text" placeholder="Irshad">
+                                <div class="form-group">
+                                    <input class="form-control nombre" type="text" value={{editar.nombre}}>
+                                </div>
+
+                                <div class="form-group ">
+                                    <select name="especie" value={{editar.especie}} class="form-control especie">
+                                        <option value="Perro">Perro</option>
+                                        <option value="Gato">Gato</option>
+                                        <option value="Roedor">Roedor</option>
+                                        <option value="Reptil">Reptil</option>
+                                        <option value="Ave">Ave</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <input class="form-control raza" type="text" value={{editar.raza}} >
+                                </div>
+
+                                <div class="form-group">
+                                    <select name="genero" value={{editar.genero}} class="form-control genero">
+                                        <option value="desconocido">Desconocido</option>
+                                        <option value="Hembra">Hembra</option>
+                                        <option value="Macho">Macho</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group ">                                                                     
+                                    <div class="input-group">
+                                        <input type="text" name="peso" class="form-control peso" required value="{{editar.peso}}">
+                                        <span class="input-group-addon">kg</span>
+                                    </div>                                           
+                                </div>
+
+                                <div class="form-group ">
+                                    <div class="input-group">
+                                        <input type="text" name="largo" class="form-control largo" required value="{{editar.largo}}">
+                                        <span class="input-group-addon">cm</span>
+                                    </div>                                                                  
+                                </div>
+
+                                <div class="form-group ">
+                                    <div class="input-group">
+                                        <input type="text" name="altura" class="form-control altura" required value="{{editar.altura}}">
+                                        <span class="input-group-addon">cm</span>
+                                    </div>                                           
+                                </div>
+
+                                <div class="form-group ">
+                                    <input type="date" name="nacimiento" class="form-control nacimiento" required value="{{editar.nacimiento}}">
+                                </div>
+
+                                <div class="form-group">
+                                    <select name="estado" value="{{editar.estado}}" class="form-control estado">
+                                        <option value="Disponible">Disponible</option>
+                                        <option value="Reservado">Reservado</option>
+                                        <option value="Fallecido">Fallecido</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea class="form-control descripcion" type="text" value={{editar.descripcion}}></textarea> 
+                                </div>
+
                             </div>
-                            <div class="form-group">
-                                <textarea rows="2" class="form-control" placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
 
 
+                            <div class="modal-footer ">
+                                <button type="button" class="btn btn-warning btn-lg update" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Actualizar</button>
                             </div>
                         </div>
-                        <div class="modal-footer ">
-                            <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Actualizar</button>
-                        </div>
+                        <!-- /.modal-content --> 
                     </div>
-                    <!-- /.modal-content --> 
+                    <!-- /.modal-dialog --> 
                 </div>
-                <!-- /.modal-dialog --> 
             </div>
 
 
@@ -274,7 +252,7 @@
 
                         </div>
                         <div class="modal-footer ">
-                            <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span>Sí</button>
+                            <button type="button" class="btn btn-success yes" data-dismiss="modal"><span class="glyphicon glyphicon-ok-sign"></span>Sí</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
                         </div>
                     </div>
@@ -282,8 +260,41 @@
                 </div>
                 <!-- /.modal-dialog --> 
             </div>
-
             
+            <div class="modal fade deleted" id="myModal" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Correcto</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>La baja se ha realizado con éxito</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade modified" id="myModal" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Correcto</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>La modificación se ha realizado con éxito</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>

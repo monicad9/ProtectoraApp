@@ -6,7 +6,7 @@
 
             <div class="row">
 
-            	<h4>Registro de voluntarios</h4>
+            	 <h3 class="titulos">Registro de animal</h3>
 
 
             </div>
@@ -24,32 +24,38 @@
 				<div class="container">
 		            <form class="form-horizontal" role="form">
 		                <h2>Nueva Mascota</h2>
+	                	<div class="form-group ">
+                    		<label class="control-label col-md-2">NºChip<br></label>
+                    		<div class="col-md-10">
+                        		<input type="text" name="chip" class="form-control" required [(ngModel)]="chip">
+                    		</div>
+                		</div>
 
 	                	<div class="form-group ">
                     		<label class="control-label col-md-2">Nombre<br></label>
                     		<div class="col-md-10">
-                        		<input type="text" name="nombre" class="form-control" required>
+                        		<input type="text" name="nombre" class="form-control" [(ngModel)]="nombre" required>
                     		</div>
                 		</div>
 
-	                	<div class="form-group ">
-                    		<label class="control-label col-md-2">NºChip<br></label>
-                    		<div class="col-md-10">
-                        		<input type="text" name="chip" class="form-control" required>
-                    		</div>
-                		</div>
 
                 		<div class="form-group ">
                     		<label class="control-label col-md-2">Especie<br></label>
-                    		<div class="col-md-10">
-                        		<input type="text" name="especie" class="form-control" required>
-                    		</div>
+							<div class="col-md-10">
+           						 <select name="genero" [(ngModel)]="especie" class="form-control">
+                                    <option value="perro">Perro</option>
+                                    <option value="gato">Gato</option>
+                                    <option value="roedor">Roedor</option>
+                                    <option value="reptil">Reptil</option>
+                                    <option value="ave">Ave</option>
+                                </select>
+        					</div>
                 		</div>
 
                 		<div class="form-group ">
                     		<label class="control-label col-md-2">Raza<br></label>
                     		<div class="col-md-10">
-                        		<input type="text" name="raza" class="form-control" required>
+                        		<input type="text" name="raza" class="form-control" required [(ngModel)]="raza">
                     		</div>
                 		</div>
 
@@ -57,7 +63,7 @@
 			       			<label class="control-label col-md-2">Peso</label>
 	                        <div class="col-md-10">
 	                            <div class="input-group">
-	                                <input type="text" name="peso" class="form-control" required>
+	                                <input type="text" name="peso" class="form-control" required [(ngModel)]="peso">
 	                                <span class="input-group-addon">kg</span>
 	                            </div>					                         
 	                        </div>
@@ -67,7 +73,7 @@
 			       			<label class="control-label col-md-2">Altura</label>
 	                        <div class="col-md-10">
 	                            <div class="input-group">
-	                                <input type="text" name="altura" class="form-control" required>
+	                                <input type="text" name="altura" class="form-control" required [(ngModel)]="altura">
 	                                <span class="input-group-addon">cm</span>
 	                            </div>					                         
 	                        </div>
@@ -77,7 +83,7 @@
 			       			<label class="control-label col-md-2">Largo</label>
 	                        <div class="col-md-10">
 	                            <div class="input-group">
-	                                <input type="text" name="largo" class="form-control" required>
+	                                <input type="text" name="largo" class="form-control" required [(ngModel)]="largo">
 	                                <span class="input-group-addon">cm</span>
 	                            </div>					                         
 	                        </div>
@@ -86,39 +92,59 @@
                 		<div class="form-group ">
                     		<label class="control-label col-md-2">Fecha de Nacimiento<br></label>
                     		<div class="col-md-10">
-                        		<input type="date" name="nacimiento" class="form-control" required>
+                        		<input type="date" name="nacimiento" class="form-control" required [(ngModel)]="nacimiento">
                     		</div>
                 		</div>
 
 						<div class="form-group ">
 	                        <label class="control-label col-md-2">Descripción<br></label>
 	                        <div class="col-md-10">
-	                            <textarea type="text" name="salud" class="form-control"></textarea>
+	                            <textarea type="text" name="descripcion" class="form-control" [(ngModel)]="descripcion"></textarea>
 	                        </div>
 	                    </div>
 
 						<div class="form-group ">
-	                        <label class="control-label col-md-2">Salud<br></label>
+	                        <label class="control-label col-md-2">Enfermedades<br></label>
 	                        <div class="col-md-10">
-	                            <textarea type="text" name="salud" class="form-control"></textarea>
+	                            <textarea type="text" name="enfermedades" class="form-control" [(ngModel)]="enfermedades"></textarea>
 	                        </div>
 	                    </div>
-
+						<div class="form-group ">
+	                        <label class="control-label col-md-2">Vacunas<br></label>
+	                        <div class="col-md-10">
+	                            <textarea type="text" name="vacunas" class="form-control" [(ngModel)]="vacunas"></textarea>
+	                        </div>
+	                    </div>
+						<div class="form-group ">
+	                        <label class="control-label col-md-2">Régimen especiel<br></label>
+	                        <div class="col-md-10">
+	                            <textarea type="text" name="regimen" class="form-control" [(ngModel)]="regimen"></textarea>
+	                        </div>
+	                    </div>
 	                    <div class="form-group">
 	                    	<label class="control-label col-md-2">Estado<br></label>
 							<div class="col-md-10">
-           						 <select name="estado" class="form-control">
+           						 <select name="estado" [(ngModel)]="estado" class="form-control">
                                     <option value="disponible">Disponible</option>
                                     <option value="reservado">Reservado</option>
                                     <option value="fallecido">Fallecido</option>
                                 </select>
         					</div>
         				</div>
-
+	                    <div class="form-group">
+	                    	<label class="control-label col-md-2">Esterilizado<br></label>
+							<div class="col-md-10">
+           						 <select name="esterilizado" [(ngModel)]="esterilizado" class="form-control">
+                                    <option value="desconocido">Desconocido</option>
+                                    <option value="Si">Sí</option>
+                                    <option value="No">No</option>
+                                </select>
+        					</div>
+        				</div>
 	                    <div class="form-group">
 	                    	<label class="control-label col-md-2">Género<br></label>
 							<div class="col-md-10">
-           						 <select name="genero" class="form-control">
+           						 <select name="genero" [(ngModel)]="genero" class="form-control">
                                     <option value="desconocido">Desconocido</option>
                                     <option value="hembra">Hembra</option>
                                     <option value="macho">Macho</option>
@@ -128,10 +154,65 @@
 		            
 		                <div class="form-group">
 		                    <div class="col-md-10 col-md-offset-2">
-		                        <button type="submit" class="btn btn-default btn-block registrar">Registrar</button>
+		                        <button type="submit" class="btn btn-default btn-block" (click)="registrar()">Registrar</button>
 		                    </div>
 		                </div>
 		            </form> 
+
+ 					<!--  Modal para los datos no correctos -->
+		            <div class="modal fade nodata" id="myModal" role="dialog">
+		            	<div class="modal-dialog modal-sm">
+		            		<div class="modal-content">
+		            			<div class="modal-header">
+		            				<button type="button" class="close" data-dismiss="modal">&times;</button>
+		            				<h4 class="modal-title">Error</h4>
+		            			</div>
+		            			<div class="modal-body">
+		            				<p>Los datos facilitados no son correctos</p>
+		            			</div>
+		            			<div class="modal-footer">
+		            				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+		            			</div>
+		            		</div>
+		            	</div>
+		            </div>
+
+					<!-- Modal para el fallo en base de datos  -->
+		            <div class="modal fade error" id="myModal" role="dialog">
+		            	<div class="modal-dialog modal-sm">
+		            		<div class="modal-content">
+		            			<div class="modal-header">
+		            				<button type="button" class="close" data-dismiss="modal">&times;</button>
+		            				<h4 class="modal-title">Error</h4>
+		            			</div>
+		            			<div class="modal-body">
+		            				<p>Este animal ya está registrado. Compruebe de nuevo los datos</p>
+		            			</div>
+		            			<div class="modal-footer">
+		            				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+		            			</div>
+		            		</div>
+		            	</div>
+		            </div>
+
+		            <!--  Modal de voluntario correcto -->
+		            <div class="modal fade added" id="myModal" role="dialog">
+		            	<div class="modal-dialog modal-sm">
+		            		<div class="modal-content">
+		            			<div class="modal-header">
+		            				<button type="button" class="close" data-dismiss="modal">&times;</button>
+		            				<h4 class="modal-title">Correcto</h4>
+		            			</div>
+		            			<div class="modal-body">
+		            				<p>El registro se ha completado con éxito</p>
+		            			</div>
+		            			<div class="modal-footer">
+		            				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+		            			</div>
+		            		</div>
+		            	</div>
+		            </div>
+		            <!--  FIN DE MODAL -->
 
 		        </div> 
 

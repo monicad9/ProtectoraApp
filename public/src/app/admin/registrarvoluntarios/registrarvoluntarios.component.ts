@@ -56,24 +56,31 @@ export class RegistrarvoluntariosComponent implements OnInit {
 	}
 
 	registrar(){
-		if ( this.validarDatosVoluntario(this.dni, this.nombre, this.apellidos, this.email, this.direccion, this.tlf, this.movil) ){
-			this.crudService.añadirVoluntario(this.dni, this.nombre, this.apellidos, this.email, this.direccion, this.tlf, this.movil, this.fecha_nac, this.genero).subscribe(() => {
-				if (this.crudService.añadido){
-
-					$(".added").modal("toggle");
-					$("input").val("");
-
-				}
-
-				else{
-					$(".error").modal("toggle");
-
-				}
-			})
-		}
 		
+		if (this.dni, this.nombre, this.apellidos, this.email, this.direccion, this.tlf, this.movil, this.fecha_nac, this.genero){
+
+			if ( this.validarDatosVoluntario(this.dni, this.nombre, this.apellidos, this.email, this.direccion, this.tlf, this.movil) ){
+				this.crudService.añadirVoluntario(this.dni, this.nombre, this.apellidos, this.email, this.direccion, this.tlf, this.movil, this.fecha_nac, this.genero).subscribe(() => {
+					if (this.crudService.añadido){
+
+						$(".added").modal("toggle");
+						$("input").val("");
+
+					}
+
+					else{
+						$(".error").modal("toggle");
+
+					}
+				})
+			}
+			
+			else{
+				$(".nodata").modal('toggle');
+			}
+		}
 		else{
-			$(".nodata").modal('toggle');
+			console.log('FALTAN DATOS')
 		}
 	}
 }

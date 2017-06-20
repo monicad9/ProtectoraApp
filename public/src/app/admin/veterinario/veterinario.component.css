@@ -10,10 +10,16 @@
 	display: -webkit-inline-box;
 }
 
-td{
+td, th{
 	text-align: center;
 }
 
 li{
 	list-style: none;
 }
+.title{
+	background-color: #ececec;
+	padding: 10px;
+	
+}
+

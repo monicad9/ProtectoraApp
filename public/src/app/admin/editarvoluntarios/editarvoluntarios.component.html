@@ -6,7 +6,7 @@
         <div class="col-lg-12">
 
             <div class="row">
-                <h4>Lista de voluntarios</h4>
+                 <h3 class="titulos">Lista de voluntarios</h3>
             </div>
 
             <div class="row title">
@@ -18,10 +18,10 @@
             <div class="row">
                 
                 <div class="col-md-12">
-                
+                	
                     <div class="table-responsive">
-                        
-                        <table id="mytable" class="table table-bordred table-hover">
+
+                        <table *ngIf="array_voluntarios[0]!=undefined"  id="mytable" class="table table-bordred table-hover">
                            
                             <thead>
 
@@ -32,6 +32,7 @@
                                 <th>Dirección</th>
                                 <th>Teléfono</th>
                                 <th>Móvil</th>
+                                <th>Nacimiento</th>
                                 <th>Género</th>
 
 
@@ -46,19 +47,24 @@
                                     <td>{{datos.email}}</td>
                                     <td>{{datos.direccion}}</td>
                                     <td>{{datos.telefono}}</td>
-                                    <td>{{datos.movil}}</td>     
-                                    <td>{{datos.genero}}</td>                                         
+                                    <td>{{datos.movil}}</td> 
+                                    <td>{{datos.fecha_nacimiento}}</td>      
+                                    <td>{{datos.genero}}</td>
+
                                     <td class="table-actions">
+
                                         <div class="col-md-6 col-xs-6">
-                                            <a class="btn btn-primary btn-block" data-toggle="modal" data-target="#edit">
+                                            <a class="btn btn-primary btn-block edit" data-toggle="modal" data-target="#editar{{datos.dni}}" (click)="editarVoluntario(datos.dni)">
                                                 <i class="fa fa-edit"></i>
                                             </a>
                                          </div>
+
                                         <div class="col-md-6 col-xs-6">
-                                            <a class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete">
+                                            <a class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete" (click)="borrarVoluntario(datos.dni)">
                                                 <i class="fa fa-trash"></i>
                                             </a>
                                         </div>
+
                                     </td>
                                 </tr>
 
@@ -66,7 +72,7 @@
 
                         </table>
 
-                        <div class="clearfix"></div>
+<!--                         <div class="clearfix"></div>
 	                        <ul class="pagination pull-right">
 	                            <ul class="pager">
 
@@ -75,51 +81,75 @@
 								</ul>
 	                        </ul>
 
-                    	</div>
+                    	</div> -->
                     </div>
               	</div>
          
+              	<div class="col-md-6 col-md-offset-4">                        
+              		<img *ngIf="array_voluntarios[0]==undefined" src="../imagenes/loader.gif" style="text-align: center;">
+              	</div>
 
+            <div *ngIf="array_voluntarios[0]!=undefined">
+                
+                <div *ngFor="let editar of array_voluntarios[0].docs" class="modal fade" id="editar{{editar.dni}}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
 
-
-            <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                            <h4 class="modal-title custom_align" id="Heading">Edita </h4>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <input class="form-control " type="text" placeholder="Mohsin">
+                    <div  class="modal-dialog">
+                        <div  class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                                <h4 class="modal-title custom_align" id="Heading">Editando a: {{editar.dni}} </h4>
                             </div>
-                            <div class="form-group">
 
-                                <input class="form-control " type="text" placeholder="Irshad">
+                            <div  class="modal-body">
+                                <div class="form-group">
+                                    <input class="form-control nombre" type="text" value={{editar.nombre}}>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control apellidos" type="text" value={{editar.apellidos}}>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control email" type="text" value={{editar.email}} >
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control direccion" type="text" value={{editar.direccion}}>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control telefono" type="text" value={{editar.telefono}}>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control movil" type="text" value={{editar.movil}}>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control nacimiento" type="date" value={{editar.fecha_nacimiento}}>
+                                </div>
+                                <div class="form-group">
+                                    <select name="genero" value={{editar.genero}} class="form-control genero">
+                                        <option value="desconocido">Desconocido</option>
+                                        <option value="Hombre">Hombre</option>
+                                        <option value="Mujer">Mujer</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <textarea rows="2" class="form-control" placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
 
 
+                            <div class="modal-footer ">
+                                <button type="button" class="btn btn-warning btn-lg update" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Actualizar</button>
                             </div>
                         </div>
-                        <div class="modal-footer ">
-                            <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Actualizar</button>
-                        </div>
+                        <!-- /.modal-content --> 
                     </div>
-                    <!-- /.modal-content --> 
+                    <!-- /.modal-dialog --> 
                 </div>
-                <!-- /.modal-dialog --> 
             </div>
 
 
 
-            <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+            <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                            <h4 class="modal-title custom_align" id="Heading">Eliminar mascota</h4>
+                            <h4 class="modal-title custom_align" id="Heading">Eliminar voluntario</h4>
                         </div>
                         <div class="modal-body">
 
@@ -127,8 +157,8 @@
 
                         </div>
                         <div class="modal-footer ">
-                            <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span>Sí</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+                            <button type="button" class="btn btn-success yes" data-dismiss="modal"><span class="glyphicon glyphicon-ok-sign"></span>Sí</button>
+                            <button type="button" class="btn btn-default no" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
                         </div>
                     </div>
                     <!-- /.modal-content --> 
@@ -136,7 +166,40 @@
                 <!-- /.modal-dialog --> 
             </div>
 
-            
+            <div class="modal fade deleted" id="myModal" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Correcto</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>La baja se ha realizado con éxito</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade modified" id="myModal" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Correcto</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>La modificación se ha realizado con éxito</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>
