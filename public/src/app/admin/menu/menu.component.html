@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<body>
+
+		<div class="navbar-wrapper">
+		    <div class="container-fluid">
+		        <nav class="navbar navbar-fixed-top">
+		            <div class="container">
+		                <div class="navbar-header">
+		                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			                    <span class="sr-only">Toggle navigation</span>
+			                    <span class="icon-bar"></span>
+			                    <span class="icon-bar"></span>
+			                    <span class="icon-bar"></span>
+		                    </button>
+		                    <a class="navbar-brand">Panel Administración</a>
+		                </div>
+		                <div id="navbar" class="navbar-collapse collapse">
+		                    <ul class="nav navbar-nav">
+		                        <li><a [routerLink] = "['/admin']">Inicio</a></li>
+
+		                        <li><a [routerLink] = "['/admin/paneltareas']">Tareas</a></li>
+
+		                        <li class=" dropdown"><a class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Voluntarios <span class="caret"></span></a>
+		                            <ul class="dropdown-menu">
+		                                <li><a [routerLink] = "['/admin/editarvoluntarios']">Lista voluntarios</a></li>
+		                                <li><a [routerLink] = "['/admin/registrarvoluntarios']">Añadir voluntario</a></li>
+		                            </ul>
+		                        </li>
+		                        <li class=" dropdown"><a class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mascotas <span class="caret"></span></a>
+		                            <ul class="dropdown-menu">
+		                                <li><a [routerLink] = "['/admin/listamascotas']">Lista de mascotas</a></li>
+		                                <li><a [routerLink] = "['/admin/añadirmascota']">Añadir mascota</a></li>
+		                            </ul>
+		                        </li>
+		                        <li class=" down"><a class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Libros <span class="caret"></span></a>
+		                            <ul class="dropdown-menu">
+		                                <li><a [routerLink] = "['/admin/libroacogidas']">Libro de Acogidas</a></li>
+		                                <li><a [routerLink] = "['/admin/libroreservas']">Libro de Reservas</a></li>
+		                            </ul>
+		                        </li>
+		                        <li><a [routerLink] = "['/admin/veterinario']">Veterinario</a></li>
+		                    </ul>
+		                    <ul class="nav navbar-nav pull-right">
+		                        <li class=""><a href="#">Logout</a></li>
+		                    </ul>
+		                </div>
+		            </div>
+		        </nav>
+		    </div>
+		</div>
+
+	</body>
+	
+</html>

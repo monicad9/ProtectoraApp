@@ -1,6 +1,6 @@
 li{
 	list-style: none;
-	color:#effeff !important;
+	color: white !important;
 	padding:5px;
 	text-align: center;
 }
@@ -11,7 +11,7 @@ a{
 }
 
 footer.page-footer{
-	background-color: rgb(17, 136, 196) !important;
+	background-color: #C4D42D !important;
 }
 
 

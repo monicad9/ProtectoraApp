@@ -3,7 +3,7 @@
 }
 
 a{
-	color:#effeff !important;
+	color: white !important;
 }
 
 a:link{
@@ -12,8 +12,9 @@ a:link{
 }
 
 .navbar-inverse{
-	background-color: rgb(17, 136, 196) !important;
-	border-color:  rgb(17, 136, 196) !important;
+	background-color: #C4D42D !important;
+	border-color: #C4D42D !important;
+	margin-bottom: 0px;
 }
 
 .navbar-inverse .navbar-toggle .icon-bar{
@@ -21,10 +22,10 @@ a:link{
 }
 
 .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
-    background-color: #2196F3;
+    background-color: #a4b410;
 }
 
 .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover{
-	background-color: #2196F3;
+	background-color: #a4b410;
 }
 

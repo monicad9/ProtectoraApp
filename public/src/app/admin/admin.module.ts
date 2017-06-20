@@ -7,7 +7,6 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { LoginRoutingModule } from './login/login-routing.module';
 
 import { PanelindexComponent } from './panelindex/panelindex.component';
-import { PanelimagesComponent } from './panelimages/panelimages.component';
 import { PaneltareasComponent } from './paneltareas/paneltareas.component';
 import { EditarvoluntariosComponent } from './editarvoluntarios/editarvoluntarios.component';
 import { RegistrarvoluntariosComponent } from './registrarvoluntarios/registrarvoluntarios.component';
@@ -17,7 +16,7 @@ import { LibroacogidasComponent } from './libroacogidas/libroacogidas.component'
 import { LibroreservasComponent } from './libroreservas/libroreservas.component';
 import { VeterinarioComponent } from './veterinario/veterinario.component';
 import { AdminComponent } from './admin.component';
-import { MenuLateralComponent } from './menu-lateral/menu-lateral.component';
+import { MenuComponent } from './menu/menu.component';
 import { LoginComponent } from './login/login.component';
 
 import { LoginService } from './services/login.service';
@@ -33,7 +32,6 @@ import { CRUDService } from './services/crud.service';
   ],
   declarations: [
   	PanelindexComponent, 
-  	PanelimagesComponent, 
   	PaneltareasComponent, 
   	EditarvoluntariosComponent, 
   	RegistrarvoluntariosComponent,
@@ -43,7 +41,7 @@ import { CRUDService } from './services/crud.service';
   	LibroreservasComponent, 
   	VeterinarioComponent,
   	AdminComponent,
-  	MenuLateralComponent,
+  	MenuComponent,
   	LoginComponent],
 
   providers: [LoginService, LoginGuardService, CRUDService],

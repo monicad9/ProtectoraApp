@@ -17,3 +17,13 @@
 	margin-bottom: 3rem;
 	text-align: center;
 }
+
+#portada{
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+
+.carousel{
+	margin-bottom: 7em;
+}

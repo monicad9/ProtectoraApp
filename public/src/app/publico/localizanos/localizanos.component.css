@@ -23,12 +23,12 @@
 }
 
 button{
-	background-color: #1188c4 !important;
+	background-color: #C4D42D !important;;
 	margin-bottom: 4em !important;
 }
 
 .input-field .prefix.active{
-	color: #1188c4 !important;
+	color: #C4D42D !important;
 }
 
 
@@ -43,8 +43,8 @@ input:not([type=tel]):focus:not([readonly]),
 input:not([type=number]):focus:not([readonly]),
 input:not([type=search]):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]){
-	border-bottom: 1px solid #1188c4 !important;
-	box-shadow: 0 1px 0 0 #1188c4 !important;
+	border-bottom: 1px solid #C4D42D !important;;
+	box-shadow: 0 1px 0 0 #C4D42D !important;;
 }
 textarea{
 	resize: vertical;

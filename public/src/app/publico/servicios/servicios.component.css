@@ -51,7 +51,7 @@ p{
 
 
 #precios [class*="col-"]:hover .perro-photo{
-    border-color: #1188c4;
+    border-color: #C4D42D;
 }
 
 .tamaño:after {
@@ -59,7 +59,7 @@ p{
     width: 110px;
     height: 1px;
     display: block;
-    border-bottom: 2px solid #1188c4;
+    border-bottom: 2px solid #C4D42D;
     margin: 10px auto auto auto;
 }
 

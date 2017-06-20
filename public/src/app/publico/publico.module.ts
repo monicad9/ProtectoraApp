@@ -12,7 +12,6 @@ import { IndexComponent } from './index/index.component';
 import { LocalizanosComponent } from './localizanos/localizanos.component';
 import { MenuComponent } from './menu/menu.component';
 import { ServiciosComponent } from './servicios/servicios.component';
-import { PortadaComponent } from './portada/portada.component';
 
 import { PagenotfoundComponent } from '../pagenotfound/pagenotfound.component';
 import { PublicoComponent } from './publico.component';
@@ -36,7 +35,6 @@ import { PublicoComponent } from './publico.component';
   		LocalizanosComponent,
   		MenuComponent,
   		ServiciosComponent,
-  		PortadaComponent,
   		PublicoComponent,
       PagenotfoundComponent
   	]
