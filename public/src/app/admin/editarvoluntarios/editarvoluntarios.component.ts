@@ -27,6 +27,7 @@ export class EditarvoluntariosComponent implements OnInit {
 	constructor(private crudService: CRUDService) {}
 
 	ngOnInit() {
+		$('[data-toggle="tooltip"]').tooltip();
 
 		this.crudService.mostrarVoluntarios().subscribe(() => {
 			this.array_voluntarios.push(this.crudService.array_vol)
@@ -34,6 +35,21 @@ export class EditarvoluntariosComponent implements OnInit {
 
 
 	}
+
+	validarDatosVoluntario( dni, nombre, apellidos, email, tlf, movil) {
+
+		let expresion_dni = /^\d{8}[a-zA-Z]$/;
+		let expresion_nombre = /^([a-zñáéíóúA-ZÑÁÉÍÓÚ]+[\s]*)+$/;
+		let expresion_apellidos = /^([a-zñáéíóúA-ZÑÁÉÍÓÚ]+\s+[a-zñáéíóúA-ZÑÁÉÍÓÚ]+[\s]*)+$/;
+		let expresion_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+		let expresion_tlf = /^[0-9]{9}$/;
+
+
+		if (expresion_dni.test(dni) && expresion_nombre.test(nombre) && expresion_apellidos.test(apellidos) && expresion_email.test(email) && expresion_tlf.test(tlf) && expresion_tlf.test(movil)){
+			return true;           
+		} 
+	}
+
 
 	borrarVoluntario(dni){
 		var self = this;
@@ -78,24 +94,33 @@ export class EditarvoluntariosComponent implements OnInit {
 			self.genero = $('#editar' + self.dni_voluntario + ' .genero').val();
 
 			if (self.bool){
-				self.crudService.editarVoluntario(self.dni_voluntario, self.nombre, self.apellidos, self.email, self.direccion, self.tlf, self.movil, self.fecha_nac, self.genero).subscribe(() => {
-					if (self.crudService.modificado){
-						$('#editar' + self.dni_voluntario).modal('hide');
+				if (self.nombre, self.apellidos, self.email, self.direccion, self.tlf, self.movil, self.fecha_nac, self.genero){
 
-						self.array_voluntarios = [];
-						self.crudService.mostrarVoluntarios().subscribe(() => {
-							self.array_voluntarios.push(self.crudService.array_vol)
-							$('.modified').modal("toggle");
-						});
+					if ( self.validarDatosVoluntario(self.dni_voluntario, self.nombre, self.apellidos, self.email, self.tlf, self.movil) ){
+
+						self.crudService.editarVoluntario(self.dni_voluntario, self.nombre, self.apellidos, self.email, self.direccion, self.tlf, self.movil, self.fecha_nac, self.genero).subscribe(() => {
+							if (self.crudService.modificado){
+								$('#editar' + self.dni_voluntario).modal('hide');
+
+								self.array_voluntarios = [];
+								self.crudService.mostrarVoluntarios().subscribe(() => {
+									self.array_voluntarios.push(self.crudService.array_vol)
+									$('.modified').modal("toggle");
+									self.bool = false;
+								});
+							}
+
+							else{
+								$(".error").modal("toggle");
+							}
+						})
 					}
-
 					else{
-						console.log('Modificacion no realizada')
+						$(".nodata").modal('toggle');
 					}
-				})
-			
-
-				self.bool = false;
+				}else{
+					$(".campos").modal("toggle");
+				}
 			}
 		})
 	}

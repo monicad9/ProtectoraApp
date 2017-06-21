@@ -19,56 +19,52 @@
 	        </div>
 
 	        <div class="row">
-	        	<div class="table-responsive">
-	        		<table *ngIf="array_veterinarios[0]!=undefined" id="mytable" class="table table-bordred table-hover">
-		                   
-		              	<thead>
 
-		              		<th>DNI</th>
-		              		<th>Nombre</th>
-		              		<th>Correo</th>
-		              		<th>Teléfono</th>
-		              		<th>Móvil</th>
+		        <div class="col-md-6 col-md-offset-4">                        
+              		<img *ngIf="array_veterinarios[0]==undefined" src="../imagenes/loader.gif" style="text-align: center;">
+              	</div>
 
-							<!-- <tr class="filters">
-		                        <th><input type="text" class="form-control" placeholder="Nombre"></th>
-		                        <th><input type="text" class="form-control" placeholder="Correo"></th>
-		                        <th><input type="text" class="form-control" placeholder="Teléfono"></th>
-		                        <th><input type="text" class="form-control" placeholder="Móvil"></th>
+		        <div class="col-md-12">
 
-		                        <th>
-		                        	<button type="submit" class="btn btn-block btn-primary">Filtrar</button>
-		                        </th>
-		                    </tr> -->
+		        	<div class="table-responsive">
+		        		<table *ngIf="array_veterinarios[0]!=undefined" id="mytable" class="table table-bordred table-hover">
+			                   
+			              	<thead>
 
+			              		<th>DNI</th>
+			              		<th>Nombre</th>
+			              		<th>Correo</th>
+			              		<th>Teléfono</th>
+			              		<th>Móvil</th>
 
-		              	</thead>
-		              	<tbody *ngFor="let datos of array_veterinarios[0].docs">
+			              	</thead>
+			              	<tbody *ngFor="let datos of array_veterinarios[0].docs">
 
-		              		<tr>
-		              			<td>{{datos.dni}}</td>
-		              			<td>{{datos.nombre}}</td>
-		              			<td>{{datos.correo}}</td>
-		              			<td>{{datos.telefono}}</td>
-		              			<td>{{datos.movil}}</td>
-		              											
-								<td class="table-actions">
-                                    <div class="col-md-6 col-xs-6">
-                                        <a class="btn btn-primary btn-block edit" data-toggle="modal" data-target="#editar{{datos.dni}}" (click)="editarVeterinario(datos.dni)">
-                                            <i class="fa fa-edit"></i>
-                                        </a>
-                                     </div>
+			              		<tr>
+			              			<td>{{datos.dni}}</td>
+			              			<td>{{datos.nombre}}</td>
+			              			<td>{{datos.correo}}</td>
+			              			<td>{{datos.telefono}}</td>
+			              			<td>{{datos.movil}}</td>
+			              											
+									<td class="table-actions">
+	                                    <div class="col-md-6 col-xs-6">
+	                                        <a class="btn btn-primary btn-block edit" data-toggle="modal" data-target="#editar{{datos.dni}}" (click)="editarVeterinario(datos.dni)">
+	                                            <i class="fa fa-edit"></i>
+	                                        </a>
+	                                     </div>
 
-                                    <div class="col-md-6 col-xs-6">
-                                        <a class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete" (click)="borrarVeterinario(datos.dni)">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-                                    </div>
-                                </td>
-		              		</tr>
-		              	</tbody>
-			        </table>
-	        	</div>
+	                                    <div class="col-md-6 col-xs-6">
+	                                        <a class="btn btn-danger btn-block confirm" data-toggle="modal" data-target="#delete" (click)="borrarVeterinario(datos.dni)">
+	                                            <i class="fa fa-trash"></i>
+	                                        </a>
+	                                    </div>
+	                                </td>
+			              		</tr>
+			              	</tbody>
+				        </table>
+		        	</div>
+		        </div>
 	        </div>
 
 	        <div class="row">
@@ -83,10 +79,15 @@
 
 			<div class="row">
 				
+				<div class="col-md-6 col-md-offset-4">                        
+              		<img *ngIf="datos_veterinarios_masc[0]==undefined" src="../imagenes/loader.gif" style="text-align: center;">
+              	</div>
+
 		        <div class="col-md-12">
 		        
 		        	<div class="table-responsive">
-		                
+
+
 		              	<table *ngIf="datos_veterinarios_masc[0]!=undefined" id="mytable" class="table table-bordred table-hover">
 		                   
 			              	<thead>
@@ -97,48 +98,6 @@
 			              		<th>Enfermedades</th>
 			              		<th>Régimen Especial</th>
 							
-								<!--<tr class="filters">
-			                        <th><input type="text" class="form-control" placeholder="Nº Chip"></th>
-
-			                        <th>
-			                        	<select name="esterilizado" class="form-control">
-			                            	<option value="cualquiera">--Seleccionar--</option>
-	                                        <option value="si">Sí</option>
-	                                        <option value="no">No</option>
-	                        			</select>
-	                        		</th>
-
-			                        <th>
-			                        	<select name="vacunado" class="form-control">
-			                            	<option value="cualquiera">--Seleccionar--</option>
-	                                        <option value="si">Sí</option>
-	                                        <option value="no">No</option>
-	                        			</select>
-	                        		</th>
-
-			                        <th>
-			                        	<select name="enfermedades" class="form-control">
-			                            	<option value="cualquiera">--Seleccionar--</option>
-	                                        <option value="si">Sí</option>
-	                                        <option value="no">No</option>
-	                        			</select>
-	                        		</th>
-
-	                        		<th>
-			                        	<select name="regimen" class="form-control">
-			                            	<option value="cualquiera">--Seleccionar--</option>
-	                                        <option value="si">Sí</option>
-	                                        <option value="no">No</option>
-	                        			</select>
-	                        		</th>
-
-
-			                        <th>
-			                        	<button type="submit" class="btn btn-block btn-primary">Filtrar</button>
-			                        </th>
-			                    </tr> -->
-
-
 			              	</thead>
 			              	<tbody>
 
@@ -178,15 +137,6 @@
 		              	</table>
 
 		              	<div class="clearfix"></div>
-						<!--<ul class="pagination pull-right">
-		              		<li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-		              		<li class="active"><a href="#">1</a></li>
-		              		<li><a href="#">2</a></li>
-		              		<li><a href="#">3</a></li>
-		              		<li><a href="#">4</a></li>
-		              		<li><a href="#">5</a></li>
-		              		<li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-		              	</ul> -->
 
 		          	</div>
 
@@ -194,7 +144,6 @@
 
 		  	</div>
 
-			
 
             <div *ngIf="datos_veterinarios_masc[0]!=undefined">
                
@@ -385,6 +334,25 @@
             </div>
 			<!-- ....................................................................................................................... -->
 
+			<!-- MODAL PARA ELIMINACIÓN FALLIDA  -->
+            <div class="modal fade nodeleted" id="myModal" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">ERROR</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Se ha producido un error, inténtelo más tarde</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<!-- ....................................................................................................................... -->
+
 			<!-- MODAL PARA BORRAR VETERINARIO  -->
 
             <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
@@ -392,7 +360,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                            <h4 class="modal-title custom_align" id="Heading">Eliminar voluntario</h4>
+                            <h4 class="modal-title custom_align" id="Heading">Eliminar veterinario</h4>
                         </div>
                         <div class="modal-body">
 
@@ -410,7 +378,7 @@
 			
 			<!-- MODAL PARA AÑADIR A VETERINARIO-->
 
-            <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="add" aria-hidden="true">
+            <div class="modal fade add" id="add" tabindex="-1" role="dialog" aria-labelledby="add" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -422,35 +390,35 @@
                             <div class="form-group">
                             	<div class="col-md-2"><p>DNI:</p></div>
                             	<div class="col-md-10">
-                                <input class="form-control" id="dni" type="text"  required [(ngModel)]="dni"></div>
+                                <input data-toggle="tooltip" data-placement="right" title="Introduce 8 números y 1 letra" class="form-control" id="dni" type="text"  required [(ngModel)]="dni"></div>
                             </div>
 
                             <div class="form-group">
                             	<div class="col-md-2"><p>Nombre:</p></div>
                             	<div class="col-md-10">
-                                <input class="form-control" id="nombre" type="text"  required [(ngModel)]="nombre"></div>
+                                <input class="form-control" id="nombre" type="text"  required [(ngModel)]="nombre" data-toggle="tooltip" data-placement="right" title="Sólo letras"></div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-md-2"><p>Correo</p></div>
-                                <div class="col-md-10"><input class="form-control" id="correo" type="text"  required [(ngModel)]="correo"></div>
+                                <div class="col-md-10"><input class="form-control" id="correo" type="text"  required [(ngModel)]="correo" data-toggle="tooltip" data-placement="right" title="Introduce algo del tipo  'email@mail.es'"></div>
                             </div>
 
                             <div class="form-group">
                             <div class="col-md-2"><p>Teléfono</p></div>
-                                <div class="col-md-10"><input class="form-control" id="telefono" type="text" [(ngModel)]="telefono" required></div>
+                                <div class="col-md-10"><input class="form-control" id="telefono" type="text" [(ngModel)]="telefono" required data-toggle="tooltip" data-placement="right" title="Introduce 9 números"></div>
                             </div>
 
                             <div class="form-group">
-                            	<div class="col-md-2"><p>Correo</p></div>
-                                <div class="col-md-10"><input class="form-control" id="movil" type="text"  required [(ngModel)]="movil"></div>
+                            	<div class="col-md-2"><p>Móvil</p></div>
+                                <div class="col-md-10"><input class="form-control" id="movil" type="text"  required [(ngModel)]="movil" data-toggle="tooltip" data-placement="right" title="Introduce 9 números"></div>
                             </div>
 
                         </div>
 
 
                         <div class="modal-footer ">
-                            <button type="button" class="btn btn-warning btn-lg añadir" data-dismiss="modal" style="width: 100%; margin-top: 2em !important;" (click)="addVeterinario()"><span class="glyphicon glyphicon-ok-sign" ></span>Añadir</button>
+                            <button type="button" class="btn btn-warning btn-lg añadir" style="width: 100%; margin-top: 2em !important;" (click)="addVeterinario()"><span class="glyphicon glyphicon-ok-sign" ></span>Añadir</button>
                         </div>
                     </div>
                 </div>
@@ -460,7 +428,7 @@
             <!-- MODAL PARA EDITAR A VETERINARIO -->
             <div *ngIf="array_veterinarios[0]!=undefined">
                 
-                <div *ngFor="let editar of array_veterinarios[0].docs" class="modal fade" id="editar{{editar.dni}}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+                <div *ngFor="let editar of array_veterinarios[0].docs" class="modal fade edit" id="editar{{editar.dni}}" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
 
                     <div  class="modal-dialog">
                         <div  class="modal-content">
@@ -471,16 +439,16 @@
 
                             <div  class="modal-body">
                                 <div class="form-group">
-                                    <input class="form-control nombre" type="text" value={{editar.nombre}}>
+                                    <input class="form-control nombre" type="text" data-toggle="tooltip" data-placement="right" title="Sólo letras" value={{editar.nombre}} >
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control correo" type="text" value={{editar.correo}} >
+                                    <input class="form-control correo" type="text" value={{editar.correo}} data-toggle="tooltip" data-placement="right" title="Introduce algo del tipo  'email@mail.es'" >
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control telefono" type="text" value={{editar.telefono}}>
+                                    <input class="form-control telefono" type="text" value={{editar.telefono}} data-toggle="tooltip" data-placement="right" title="Introduce 9 números">
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control movil" type="text" value={{editar.movil}}>
+                                    <input class="form-control movil" type="text" value={{editar.movil}} data-toggle="tooltip" data-placement="right" title="Introduce 9 números">
                                 </div>
                             </div>
 
@@ -497,6 +465,65 @@
 
             <!-- ....................................................................................................................... -->
 
+            <!--  MODAL PARA RELLENAR TODOS LOS CAMPOS -->
+
+            <div class="modal fade campos" id="myModal" role="dialog">
+            	<div class="modal-dialog modal-sm">
+            		<div class="modal-content">
+            			<div class="modal-header">
+            				<button type="button" class="close" data-dismiss="modal">&times;</button>
+            				<h4 class="modal-title">Error</h4>
+            			</div>
+            			<div class="modal-body">
+            				<p>Debes rellenar todos los campos</p>
+            			</div>
+            			<div class="modal-footer">
+            				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            			</div>
+            		</div>
+            	</div>
+            </div>
+
+            <!-- ....................................................................................................................... -->
+
+            <!--  Modal para los datos no correctos -->
+            <div class="modal fade nodata" id="myModal" role="dialog">
+            	<div class="modal-dialog modal-sm">
+            		<div class="modal-content">
+            			<div class="modal-header">
+            				<button type="button" class="close" data-dismiss="modal">&times;</button>
+            				<h4 class="modal-title">Error</h4>
+            			</div>
+            			<div class="modal-body">
+            				<p>Los datos facilitados no son correctos</p>
+            			</div>
+            			<div class="modal-footer">
+            				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            			</div>
+            		</div>
+            	</div>
+            </div>
+
+            <!-- ....................................................................................................................... -->
+			<!-- Modal para el fallo en base de datos  -->
+            <div class="modal fade error" id="myModal" role="dialog">
+            	<div class="modal-dialog modal-sm">
+            		<div class="modal-content">
+            			<div class="modal-header">
+            				<button type="button" class="close" data-dismiss="modal">&times;</button>
+            				<h4 class="modal-title">Error</h4>
+            			</div>
+            			<div class="modal-body">
+            				<p>Este voluntario ya está registrado. Compruebe de nuevo los datos</p>
+            			</div>
+            			<div class="modal-footer">
+            				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            			</div>
+            		</div>
+            	</div>
+            </div>
+
+            <!-- ....................................................................................................................... -->
 
 	    </div>
 	</div>

@@ -29,9 +29,24 @@ export class ListamascotasComponent implements OnInit {
 	constructor(private crudService: CRUDService) { }
 
 	ngOnInit() {
+
+		$('[data-toggle="tooltip"]').tooltip();
+
 		this.crudService.mostrarMascotas().subscribe(() => {
 			this.array_mascotas.push(this.crudService.array_masc)
 		});
+	}
+
+
+	validarDatosMascota(nombre, raza, peso, largo, altura) {
+
+
+		let expresion_nombre = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
+		let expresion_numeros = /^[0-9]{1,2}(\,[0-9]{2})$/;
+
+		if (expresion_nombre.test(nombre) && expresion_nombre.test(raza) && expresion_numeros.test(peso) && expresion_numeros.test(altura) && expresion_numeros.test(largo)){
+			return true;           
+		} 
 	}
 
 	borrarMascota(chip){
@@ -83,26 +98,36 @@ export class ListamascotasComponent implements OnInit {
 
 
 			if (self.bool){
-				self.crudService.editarMascota(self.chip_mascota, self.nombre, self.especie, self.raza, self.genero, self.peso, self.largo, self.altura, self.estado, self.nacimiento, self.descripcion).subscribe(() => {
-					if (self.crudService.modificado){
-						$('#editar' + self.chip_mascota).modal('hide');
+				if (self.nombre &&  self.especie &&  self.raza &&  self.genero &&  self.peso &&  self.largo &&  self.altura &&  self.estado &&  self.nacimiento &&  self.descripcion){
 
-						self.array_mascotas = [];
-						self.crudService.mostrarMascotas().subscribe(() => {
-							self.array_mascotas.push(self.crudService.array_masc)
-							$('.modified').modal("toggle");
-						});
+					if (self.validarDatosMascota(self.nombre, self.raza, self.peso, self.largo, self.altura)){
+						self.crudService.editarMascota(self.chip_mascota, self.nombre, self.especie, self.raza, self.genero, self.peso, self.largo, self.altura, self.estado, self.nacimiento, self.descripcion).subscribe(() => {
+							if (self.crudService.modificado){
+								$('#editar' + self.chip_mascota).modal('hide');
+
+								self.array_mascotas = [];
+								self.crudService.mostrarMascotas().subscribe(() => {
+									self.array_mascotas.push(self.crudService.array_masc)
+									$('.modified').modal("toggle");
+									self.bool = false;
+								});
+							}
+
+							else{
+								$(".error").modal("toggle");
+							}
+						})
+					}else{
+						$(".nodata").modal('toggle');
+						console.log(self.nombre, self.raza, self.peso, self.largo, self.altura)
 					}
-
-					else{
-						console.log('Modificacion no realizada')
-					}
-				})
-			
-
-				self.bool = false;
+				}else{
+					$(".campos").modal("toggle");
+				}
+				
 			}
 		})
 	}
+
 
 }

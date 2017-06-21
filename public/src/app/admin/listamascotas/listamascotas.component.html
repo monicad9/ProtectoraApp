@@ -37,64 +37,6 @@
                                 <th>Descripción</th>
 
 
-<!--                            <tr class="filters">
-                                    <th><input type="text" class="form-control" placeholder="Nº Chip"></th>
-                                    <th><input type="text" class="form-control" placeholder="Nombre"></th>
-
-                                    <th>
-                                        <select name="especie" class="form-control">
-                                            <option value="cualquiera">Cualquiera</option>
-                                            <option value="gato">Gato</option>
-                                            <option value="perro">Perro</option>
-                                            <option value="roedor">Roedor</option>
-                                            <option value="reptil">Reptil</option>
-                                        </select>
-                                    </th>
-
-                                    <th><select name="genero" class="form-control">
-                                            <option value="cualquiera">Cualquiera</option>
-                                            <option value="hembra">Hembra</option>
-                                            <option value="macho">Macho</option>
-                                        </select>
-                                    </th>
-
-                                    <th>
-                                        <select name="estado" class="form-control">
-                                            <option value="cualquiera">Cualquiera</option>
-                                            <option value="disponible">Disponible</option>
-                                            <option value="reservado">Reservado</option>
-                                            <option value="enfermo">Enfermo</option>
-                                            <option value="fallecido">Fallecido</option>
-                                        </select>
-                                    </th>
-
-                                    <th>
-                                        <select name="peso" class="form-control">
-                                            <option value="cualquiera">Cualquiera</option>
-                                            <option value="menos1">&#60; 1 kg</option>
-                                            <option value="1a4">De 1 a 4 kg</option>
-                                            <option value="4a8">De 4 a 8 kg</option>
-                                            <option value="8a15">8kg a 15 kg</option>
-                                            <option value="mas15">&#62; 15 kg</option>
-                                        </select>
-                                    </th>
-
-                                    <th>
-                                        <select name="edad" class="form-control">
-                                            <option value="cualquiera">Cualquiera</option>
-                                            <option value="menos1"> &#60; 1 año </option>
-                                            <option value="1a3">De 1 a 3 años</option>
-                                            <option value="4a7">De 4 a 7 años</option>
-                                            <option value="mas7"> &#62; 7 años</option>
-                                        </select>
-                                    </th>
-
-                                    <th>
-                                        <button type="submit" class="btn btn-block btn-primary">Filtrar</button>
-                                    </th>
-                                </tr>
- -->
-
                             </thead>
                             <tbody *ngFor="let datos of array_mascotas[0].docs">
 
@@ -134,15 +76,6 @@
                         </div>
 
                         <div class="clearfix"></div>
-<!--                         <ul class="pagination pull-right">
-                            <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-                        </ul> -->
 
                     </div>
 
@@ -162,7 +95,7 @@
                              <div  class="modal-body">
 
                                 <div class="form-group">
-                                    <input class="form-control nombre" type="text" value={{editar.nombre}}>
+                                    <input class="form-control nombre" type="text" value={{editar.nombre}} data-toggle="tooltip" data-placement="right" title="Utiliza sólo letras">
                                 </div>
 
                                 <div class="form-group ">
@@ -176,7 +109,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input class="form-control raza" type="text" value={{editar.raza}} >
+                                    <input class="form-control raza" type="text" value={{editar.raza}} data-toggle="tooltip" data-placement="right" title="Utiliza sólo letras">
                                 </div>
 
                                 <div class="form-group">
@@ -189,21 +122,21 @@
 
                                 <div class="form-group ">                                                                     
                                     <div class="input-group">
-                                        <input type="text" name="peso" class="form-control peso" required value="{{editar.peso}}">
+                                        <input type="text" name="peso" class="form-control peso" required value="{{editar.peso}}" data-toggle="tooltip" data-placement="right" title="Introduce un valor seguido de ',' y 2 decimales">
                                         <span class="input-group-addon">kg</span>
                                     </div>                                           
                                 </div>
 
                                 <div class="form-group ">
                                     <div class="input-group">
-                                        <input type="text" name="largo" class="form-control largo" required value="{{editar.largo}}">
+                                        <input type="text" name="largo" class="form-control largo" required value="{{editar.largo}}" data-toggle="tooltip" data-placement="right" title="Introduce un valor seguido de ',' y 2 decimales">
                                         <span class="input-group-addon">cm</span>
                                     </div>                                                                  
                                 </div>
 
                                 <div class="form-group ">
                                     <div class="input-group">
-                                        <input type="text" name="altura" class="form-control altura" required value="{{editar.altura}}">
+                                        <input type="text" name="altura" class="form-control altura" required value="{{editar.altura}}" data-toggle="tooltip" data-placement="right" title="Introduce un valor seguido de ',' y 2 decimales">
                                         <span class="input-group-addon">cm</span>
                                     </div>                                           
                                 </div>
@@ -287,6 +220,43 @@
                         </div>
                         <div class="modal-body">
                             <p>La modificación se ha realizado con éxito</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--  MODAL PARA RELLENAR TODOS LOS CAMPOS -->
+
+            <div class="modal fade campos" id="myModal" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Error</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Debes rellenar todos los campos</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!--  Modal para los datos no correctos -->
+            <div class="modal fade nodata" id="myModal" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Error</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Los datos facilitados no son correctos</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

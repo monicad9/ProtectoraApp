@@ -27,14 +27,14 @@
 	                	<div class="form-group ">
                     		<label class="control-label col-md-2">NºChip<br></label>
                     		<div class="col-md-10">
-                        		<input type="text" name="chip" class="form-control" required [(ngModel)]="chip">
+                        		<input type="text" name="chip" class="form-control"  [(ngModel)]="chip" required data-toggle="tooltip" data-placement="right" title="Introduce 8 valores numéricos" />
                     		</div>
                 		</div>
 
 	                	<div class="form-group ">
                     		<label class="control-label col-md-2">Nombre<br></label>
                     		<div class="col-md-10">
-                        		<input type="text" name="nombre" class="form-control" [(ngModel)]="nombre" required>
+                        		<input type="text" name="nombre" class="form-control" [(ngModel)]="nombre" required data-toggle="tooltip" data-placement="right" title="Utiliza sólo letras"/>
                     		</div>
                 		</div>
 
@@ -55,7 +55,7 @@
                 		<div class="form-group ">
                     		<label class="control-label col-md-2">Raza<br></label>
                     		<div class="col-md-10">
-                        		<input type="text" name="raza" class="form-control" required [(ngModel)]="raza">
+                        		<input type="text" name="raza" class="form-control" required [(ngModel)]="raza" data-toggle="tooltip" data-placement="right" title="Utiliza sólo letras">
                     		</div>
                 		</div>
 
@@ -63,7 +63,7 @@
 			       			<label class="control-label col-md-2">Peso</label>
 	                        <div class="col-md-10">
 	                            <div class="input-group">
-	                                <input type="text" name="peso" class="form-control" required [(ngModel)]="peso">
+	                                <input type="text" name="peso" class="form-control" required [(ngModel)]="peso" data-toggle="tooltip" data-placement="right" title="Introduce un valor seguido de ',' y 2 decimales">
 	                                <span class="input-group-addon">kg</span>
 	                            </div>					                         
 	                        </div>
@@ -73,7 +73,7 @@
 			       			<label class="control-label col-md-2">Altura</label>
 	                        <div class="col-md-10">
 	                            <div class="input-group">
-	                                <input type="text" name="altura" class="form-control" required [(ngModel)]="altura">
+	                                <input type="text" name="altura" class="form-control" required [(ngModel)]="altura" data-toggle="tooltip" data-placement="right" title="Introduce un valor seguido de ',' y 2 decimales">
 	                                <span class="input-group-addon">cm</span>
 	                            </div>					                         
 	                        </div>
@@ -83,7 +83,7 @@
 			       			<label class="control-label col-md-2">Largo</label>
 	                        <div class="col-md-10">
 	                            <div class="input-group">
-	                                <input type="text" name="largo" class="form-control" required [(ngModel)]="largo">
+	                                <input type="text" name="largo" class="form-control" required [(ngModel)]="largo" data-toggle="tooltip" data-placement="right" title="Introduce un valor seguido de ',' y 2 decimales">
 	                                <span class="input-group-addon">cm</span>
 	                            </div>					                         
 	                        </div>
@@ -116,7 +116,7 @@
 	                        </div>
 	                    </div>
 						<div class="form-group ">
-	                        <label class="control-label col-md-2">Régimen especiel<br></label>
+	                        <label class="control-label col-md-2">Régimen especial<br></label>
 	                        <div class="col-md-10">
 	                            <textarea type="text" name="regimen" class="form-control" [(ngModel)]="regimen"></textarea>
 	                        </div>
@@ -125,9 +125,9 @@
 	                    	<label class="control-label col-md-2">Estado<br></label>
 							<div class="col-md-10">
            						 <select name="estado" [(ngModel)]="estado" class="form-control">
-                                    <option value="disponible">Disponible</option>
-                                    <option value="reservado">Reservado</option>
-                                    <option value="fallecido">Fallecido</option>
+                                    <option value="Disponible">Disponible</option>
+                                    <option value="Reservado">Reservado</option>
+                                    <option value="Fallecido">Fallecido</option>
                                 </select>
         					</div>
         				</div>
@@ -146,8 +146,8 @@
 							<div class="col-md-10">
            						 <select name="genero" [(ngModel)]="genero" class="form-control">
                                     <option value="desconocido">Desconocido</option>
-                                    <option value="hembra">Hembra</option>
-                                    <option value="macho">Macho</option>
+                                    <option value="Hembra">Hembra</option>
+                                    <option value="Macho">Macho</option>
                                 </select>
         					</div>
         				</div>
@@ -212,8 +212,25 @@
 		            		</div>
 		            	</div>
 		            </div>
-		            <!--  FIN DE MODAL -->
 
+
+		            <!--  MODAL PARA RELLENAR TODOS LOS CAMPOS -->
+		            <div class="modal fade campos" id="myModal" role="dialog">
+		            	<div class="modal-dialog modal-sm">
+		            		<div class="modal-content">
+		            			<div class="modal-header">
+		            				<button type="button" class="close" data-dismiss="modal">&times;</button>
+		            				<h4 class="modal-title">Error</h4>
+		            			</div>
+		            			<div class="modal-body">
+		            				<p>Debes rellenar todos los campos</p>
+		            			</div>
+		            			<div class="modal-footer">
+		            				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+		            			</div>
+		            		</div>
+		            	</div>
+		            </div>
 		        </div> 
 
         	</div>	                        

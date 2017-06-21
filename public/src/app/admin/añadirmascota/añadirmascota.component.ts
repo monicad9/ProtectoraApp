@@ -31,6 +31,7 @@ export class AñadirmascotaComponent implements OnInit {
 	constructor(private crudService: CRUDService) { }
 
 	ngOnInit() {
+		$('[data-toggle="tooltip"]').tooltip();
 	}
 
     escapeHtml(text) {
@@ -46,8 +47,6 @@ export class AñadirmascotaComponent implements OnInit {
     }
 
 	validarDatosMascota( chip, nombre, peso, altura, largo) {
-
-		/* Falta comprobar los apellidos y la dirección */
 
 		let expresion_chip = /^[0-9]{8}$/;
 		let expresion_nombre = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
@@ -78,15 +77,12 @@ export class AñadirmascotaComponent implements OnInit {
 				})
 			}
 			else{
-				console.log('FALTAN CAMPOS')
+				$(".nodata").modal('toggle');
 			}
 		}
+		else{
+			$(".campos").modal('toggle');
+		}
 	}
-
-
-
-
-
-
 
 }

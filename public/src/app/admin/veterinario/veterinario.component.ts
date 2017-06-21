@@ -15,6 +15,7 @@ export class VeterinarioComponent implements OnInit {
 	private chip_mascota;
 	private dni_veterinario;
 	private bool: boolean;
+	private bool_vet: boolean;
 
 	private dni:string="";
 	private nombre:string="";
@@ -30,6 +31,8 @@ export class VeterinarioComponent implements OnInit {
 	constructor(private crudService: CRUDService) { }
 
 	ngOnInit() {
+		$('[data-toggle="tooltip"]').tooltip();
+		
 		this.crudService.mostrarMascotas().subscribe(() => {
 			this.datos_veterinarios_masc.push(this.crudService.array_masc)
 		});
@@ -37,6 +40,19 @@ export class VeterinarioComponent implements OnInit {
 		this.crudService.mostrarVeterinarios().subscribe(() => {
 			this.array_veterinarios.push(this.crudService.array_vet)
 		});
+	}
+
+	validarDatosVeterinario( dni, nombre, correo, tlf, movil) {
+
+		let expresion_dni = /^\d{8}[a-zA-Z]$/;
+		let expresion_nombre = /^([a-záéíóúA-ZÁÉÍÓÚ]+[\s]*)+$/;
+		let expresion_email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+		let expresion_tlf = /^[0-9]{9}$/;
+
+
+		if (expresion_dni.test(dni) && expresion_nombre.test(nombre) && expresion_email.test(correo) && expresion_tlf.test(tlf) && expresion_tlf.test(movil)){
+			return true;           
+		} 
 	}
 
 	editarMascota(chip){
@@ -54,22 +70,24 @@ export class VeterinarioComponent implements OnInit {
 			if (self.bool){
 				self.crudService.editarMascotaVet(self.chip_mascota, self.esterilizado, self.vacunas, self.enfermedades, self.regimen).subscribe(() => {
 					if (self.crudService.modificado){
-						$('#editar' + self.chip_mascota).modal('hide');
+						
 
 						self.datos_veterinarios_masc = [];
 						self.crudService.mostrarMascotas().subscribe(() => {
 							self.datos_veterinarios_masc.push(self.crudService.array_masc)
 							$('.modified').modal("toggle");
+
 						});
+						$('#editar' + self.chip_mascota).modal('hide');
 					}
 
 					else{
-						console.log('Modificacion no realizada')
+						$('.nodeleted').modal("toggle");
 					}
 				})
 			
-
-				self.bool = false;
+			self.bool = false;
+				
 			}
 		})	
 	}
@@ -89,29 +107,40 @@ export class VeterinarioComponent implements OnInit {
 
 	addVeterinario(){
 
-		this.crudService.añadirVeterinario(this.dni, this.nombre,this.correo,this.telefono,this.movil).subscribe(() =>{
-			if(this.crudService.añadido){
-				this.array_veterinarios = [];
-				this.crudService.mostrarVeterinarios().subscribe(() => {
-					this.array_veterinarios.push(this.crudService.array_vet)
-				});
+		if (this.dni, this.nombre,this.correo,this.telefono,this.movil){
+			if (this.validarDatosVeterinario(this.dni, this.nombre,this.correo,this.telefono,this.movil)){
+				this.crudService.añadirVeterinario(this.dni, this.nombre,this.correo,this.telefono,this.movil).subscribe(() =>{
+					if(this.crudService.añadido){
+						this.array_veterinarios = [];
+						this.crudService.mostrarVeterinarios().subscribe(() => {
+							this.array_veterinarios.push(this.crudService.array_vet)
+						});
 
-				$(".added").modal("toggle");
-				$("input").val("");
+						$(".added").modal("toggle");
+						
+						$("input").val("");
+
+					}else{
+						$(".error").modal("toggle");
+					}
+				})
+				$(".add").modal("hide");
+			}else{
+				$(".nodata").modal('toggle');
 			}
-		})
 
-		$(".added").modal("toggle");
-		$("input").val("");
+		}else{
+			$(".campos").modal("toggle");
+		}
 	}
 
 	borrarVeterinario(dni){
 		var self = this;
 		self.dni_veterinario = dni;
-		self.bool = true;
+		self.bool_vet = true;
 
 		$('.yes').click(function(){
-			if (self.bool){
+			if (self.bool_vet){
 				
 				self.crudService.borrarVeterinario(self.dni_veterinario).subscribe(() => {
 					if (self.crudService.borrado){
@@ -123,10 +152,10 @@ export class VeterinarioComponent implements OnInit {
 					}
 
 					else{
-						console.log('Veterinario no eliminado')
+						$('.nodeleted').modal("toggle");
 					}
 				});
-				self.bool = false;
+				self.bool_vet = false;
 			}
 		})
 	}
@@ -135,7 +164,7 @@ export class VeterinarioComponent implements OnInit {
 		var self = this;
 		$('#editar' + dni).modal("toggle");
 		self.dni_veterinario = dni;
-		self.bool = true;
+		self.bool_vet = true;
 
 		$('.update').click(function(){
 			self.nombre = $('#editar' + self.dni_veterinario + ' .nombre').val();
@@ -143,26 +172,36 @@ export class VeterinarioComponent implements OnInit {
 			self.telefono = $('#editar' + self.dni_veterinario + ' .telefono').val();
 			self.movil = $('#editar' + self.dni_veterinario + ' .movil').val();	
 
-			if (self.bool){
-				self.crudService.editarVeterinario(self.dni_veterinario, self.nombre, self.correo, self.telefono, self.movil).subscribe(() => {
-					if (self.crudService.modificado){
-						$('#editar' + self.dni_veterinario).modal('hide');
+			if (self.bool_vet){
+				if (self.nombre,self.correo,self.telefono,self.movil){
+					if (self.validarDatosVeterinario(self.dni_veterinario, self.nombre,self.correo,self.telefono,self.movil)){
+						self.crudService.editarVeterinario(self.dni_veterinario, self.nombre, self.correo, self.telefono, self.movil).subscribe(() => {
+							if (self.crudService.modificado){
+								$('#editar' + self.dni_veterinario).modal('hide');
 
-						self.array_veterinarios = [];
-						self.crudService.mostrarVeterinarios().subscribe(() => {
-							self.array_veterinarios.push(self.crudService.array_vet)
-							$('.modified').modal("toggle");
-							$("input").val("");
-						});
-					}
+								self.array_veterinarios = [];
+								self.crudService.mostrarVeterinarios().subscribe(() => {
+									self.array_veterinarios.push(self.crudService.array_vet)
+									$('.modified').modal("toggle");
+									self.bool_vet = false;
+									$("input").val("");
+									
+								});
+							}
 
-					else{
-						console.log('Modificacion no realizada')
+							else{
+								$(".error").modal("toggle");
+							}
+						})
+					}else{
+						$(".nodata").modal('toggle');
 					}
-				})
+				}else{
+					$(".campos").modal("toggle");
+				}
 			
 
-				self.bool = false;
+				
 			}
 		})
 	}

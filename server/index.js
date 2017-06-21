@@ -38,11 +38,11 @@ var datos_voluntario = mongoose.Schema({
 })
 
 var datos_veterinario = mongoose.Schema({
-		dni: String,
-		nombre: String,
-		correo: String,
-		telefono: String,
-		movil: String,
+	dni: String,
+	nombre: String,
+	correo: String,
+	telefono: String,
+	movil: String,
 });
 
 var datos_mascota = mongoose.Schema({

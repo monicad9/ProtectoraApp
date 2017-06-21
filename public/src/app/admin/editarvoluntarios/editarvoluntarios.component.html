@@ -72,16 +72,6 @@
 
                         </table>
 
-<!--                         <div class="clearfix"></div>
-	                        <ul class="pagination pull-right">
-	                            <ul class="pager">
-
-								    <li><a (click)="previous()">&larr; Previous</a></li>
-								    <li><a (click)="next()">Next &rarr;</a></li>
-								</ul>
-	                        </ul>
-
-                    	</div> -->
                     </div>
               	</div>
          
@@ -102,22 +92,22 @@
 
                             <div  class="modal-body">
                                 <div class="form-group">
-                                    <input class="form-control nombre" type="text" value={{editar.nombre}}>
+                                    <input class="form-control nombre" type="text" value={{editar.nombre}} data-toggle="tooltip" data-placement="right" title="Sólo letras">
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control apellidos" type="text" value={{editar.apellidos}}>
+                                    <input class="form-control apellidos" type="text" value={{editar.apellidos}} data-toggle="tooltip" data-placement="right" title="Sólo letras. Necesarios los dos apellidos" >
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control email" type="text" value={{editar.email}} >
+                                    <input class="form-control email" type="text" value={{editar.email}} data-toggle="tooltip" data-placement="right" title="Introduce algo del tipo  'email@mail.es'"  >
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control direccion" type="text" value={{editar.direccion}}>
+                                    <input class="form-control direccion" type="text" value={{editar.direccion}} data-toggle="tooltip" data-placement="right" title="Introduce algo del tipo  'C/.... nº'">
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control telefono" type="text" value={{editar.telefono}}>
+                                    <input class="form-control telefono" type="text" value={{editar.telefono}} data-toggle="tooltip" data-placement="right" title="Introduce 9 números">
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control movil" type="text" value={{editar.movil}}>
+                                    <input class="form-control movil" type="text" value={{editar.movil}} data-toggle="tooltip" data-placement="right" title="Introduce 9 números">
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control nacimiento" type="date" value={{editar.fecha_nacimiento}}>
@@ -136,9 +126,7 @@
                                 <button type="button" class="btn btn-warning btn-lg update" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span>Actualizar</button>
                             </div>
                         </div>
-                        <!-- /.modal-content --> 
                     </div>
-                    <!-- /.modal-dialog --> 
                 </div>
             </div>
 
@@ -161,10 +149,9 @@
                             <button type="button" class="btn btn-default no" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
                         </div>
                     </div>
-                    <!-- /.modal-content --> 
                 </div>
-                <!-- /.modal-dialog --> 
             </div>
+
 
             <div class="modal fade deleted" id="myModal" role="dialog">
                 <div class="modal-dialog modal-sm">
@@ -192,6 +179,44 @@
                         </div>
                         <div class="modal-body">
                             <p>La modificación se ha realizado con éxito</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--  Modal para los datos no correctos -->
+            <div class="modal fade nodata" id="myModal" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Error</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Los datos facilitados no son correctos</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--  MODAL PARA RELLENAR TODOS LOS CAMPOS -->
+
+            <div class="modal fade campos" id="myModal" role="dialog">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Error</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Debes rellenar todos los campos</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
