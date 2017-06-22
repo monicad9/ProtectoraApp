@@ -6,12 +6,16 @@
  		
  		<div class="row">
 
+
 			<div class="col-lg-12 col-md-offset-3">
 
 	        	<div class="col-lg-6 col-md-12 col-xs-12">
 
-	        		<img class="img-responsive" src="./imagenes/piechart.png" alt="">
+	        		<div style="text-align: center;" *ngIf="array_tipos[0]==undefined"><img class="loader" src="./imagenes/loader2.gif"></div>
 
+					<div *ngIf="array_tipos[0]!=undefined"><google-chart [data]="pieChartData" style="width: 900px; height: 500px;"></google-chart>
+					</div>
+	        		
 	        	</div>
 			
 			</div>
@@ -20,4 +24,3 @@
 	</div>
 
 </div>
-

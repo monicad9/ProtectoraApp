@@ -23,8 +23,14 @@ import { LoginService } from './services/login.service';
 import { LoginGuardService } from './services/login-guard.service';
 import { CRUDService } from './services/crud.service';
 
+
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+
+
+
 @NgModule({
   imports: [
+    Ng2GoogleChartsModule,
     CommonModule,
     AdminRoutingModule,
     LoginRoutingModule,
