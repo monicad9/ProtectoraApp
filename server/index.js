@@ -70,7 +70,7 @@ var Voluntario = mongoose.model('lista_voluntarios', datos_voluntario);
 var Veterinario = mongoose.model('lista_veterinarios', datos_veterinario);
 var Mascota = mongoose.model('lista_mascotas', datos_mascota);
 
-// Registro de mascotas añadidas a pelo para poder hacer pruebas
+// Registro de mascotas para poder hacer pruebas
 /*var masc01 = new Mascota({
 	chip: "72345678",
 	nombre: "Chucho",
@@ -143,101 +143,7 @@ masc03.save(function(error){
 	}
 })
 
-var masc04 = new Mascota({
-	chip: "42345678",
-	nombre: "Chucho",
-	especie: "Perro",
-	raza: "Mestizo",
-	genero: "Hembra",
-	peso: "2,40",
-	largo: "40,20",
-	altura: "20,10",
-	estado: "Disponible",
-	nacimiento: '2010-09-14',
-	esterilizado: 'Si',
-	vacunas: 'Rabia, Desparasitacion',
-	enfermedades: 'Ninguna',
-	regimen: 'No',
-	descripcion: 'Perra muy cariñosa',	
-})
 
-masc04.save(function(error){
-	if (error){
-		throw error;
-	}
-})
-
-var masc05 = new Mascota({
-	chip: "32345678",
-	nombre: "Chucho",
-	especie: "Perro",
-	raza: "Mestizo",
-	genero: "Hembra",
-	peso: "2,40",
-	largo: "40,20",
-	altura: "20,10",
-	estado: "Disponible",
-	nacimiento: '2010-09-14',
-	esterilizado: 'Si',
-	vacunas: 'Rabia, Desparasitacion',
-	enfermedades: 'Ninguna',
-	regimen: 'No',
-	descripcion: 'Perra muy cariñosa',	
-})
-
-masc05.save(function(error){
-	if (error){
-		throw error;
-	}
-})
-
-var masc06 = new Mascota({
-	chip: "22345678",
-	nombre: "Chucho",
-	especie: "Perro",
-	raza: "Mestizo",
-	genero: "Hembra",
-	peso: "2,40",
-	largo: "40,20",
-	altura: "20,10",
-	estado: "Disponible",
-	nacimiento: '2010-09-14',
-	esterilizado: 'Si',
-	vacunas: 'Rabia, Desparasitacion',
-	enfermedades: 'Ninguna',
-	regimen: 'No',
-	descripcion: 'Perra muy cariñosa',	
-})
-
-masc06.save(function(error){
-	if (error){
-		throw error;
-	}
-})
-
-var masc07 = new Mascota({
-	chip: "11345678",
-	nombre: "Chucho",
-	especie: "Perro",
-	raza: "Mestizo",
-	genero: "Hembra",
-	peso: "2,40",
-	largo: "40,20",
-	altura: "20,10",
-	estado: "Disponible",
-	nacimiento: '2010-09-14',
-	esterilizado: 'Si',
-	vacunas: 'Rabia, Desparasitacion',
-	enfermedades: 'Ninguna',
-	regimen: 'No',
-	descripcion: 'Perra muy cariñosa',	
-})
-
-masc07.save(function(error){
-	if (error){
-		throw error;
-	}
-})
 
 */
 // Registro de un administrador 
@@ -253,7 +159,7 @@ admin01.save(function(error){
 	}
 })*/
 
-/* Voluntarios añadidos a pelo para poder hacer pruebas */
+/* Voluntarios añadidos para poder hacer pruebas */
 
 /*var vol01 = new Voluntario({
 	dni: '77393801C',
@@ -303,85 +209,7 @@ vol03.save(function(err){
 		throw err;
 	}
 })	
-var vol04 = new Voluntario({
-	dni: '48962766Z',
-	nombre: 'voluntario',
-	apellidos: 'apellidos',
-	email: 'email@gmail.com',
-	direccion: 'c/cualquiera',
-	telefono: '958632401',
-	movil: '699850124',
-	fecha_nacimiento: '1996-09-14',
-	genero: 'mujer'
-})
-vol04.save(function(err){
-	if(err){
-		throw err;
-	}
-})	
-var vol05 = new Voluntario({
-	dni: '77393801U',
-	nombre: 'Monica',
-	apellidos: 'Daza Aguilera',
-	email:'monica@gmail.com',
-	direccion: 'C/Mirlo Nº8',
-	telefono: '958582401',
-	movil: '652263601',
-	fecha_nacimiento: '1996-09-14',
-	genero: 'Mujer'
-})
-vol05.save(function(err){
-	if(err){
-		throw err;
-	}
-})	
-var vol06 = new Voluntario({
-	dni: '77889944Y',
-	nombre: 'voluntario',
-	apellidos: 'apellidos',
-	email: 'email@gmail.com',
-	direccion: 'c/cualquiera',
-	telefono: '958632401',
-	movil: '699850124',
-	fecha_nacimiento: '1996-09-14',
-	genero: 'mujer'
-})
-vol06.save(function(err){
-	if(err){
-		throw err;
-	}
-})	
-var vol07 = new Voluntario({
-	dni: '11223366T',
-	nombre: 'voluntario',
-	apellidos: 'apellidos',
-	email: 'email@gmail.com',
-	direccion: 'c/cualquiera',
-	telefono: '958632401',
-	movil: '699850124',
-	fecha_nacimiento: '1996-09-14',
-	genero: 'mujer'
-})
-vol07.save(function(err){
-	if(err){
-		throw err;
-	}
-})	
-var vol08 = new Voluntario({
-	dni: '48962766X',
-	nombre: 'voluntario',
-	apellidos: 'apellidos',
-	email: 'email@gmail.com',
-	direccion: 'c/cualquiera',
-	telefono: '958632401',
-	movil: '699850124',
-	fecha_nacimiento: '1996-09-14',
-	genero: 'mujer'
-})
-vol08.save(function(err){
-	if(err){
-		throw err;
-	}
+
 })*/
 
 

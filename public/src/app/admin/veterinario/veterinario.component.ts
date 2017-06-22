@@ -107,7 +107,7 @@ export class VeterinarioComponent implements OnInit {
 
 	addVeterinario(){
 
-		if (this.dni, this.nombre,this.correo,this.telefono,this.movil){
+		if (this.dni && this.nombre && this.correo && this.telefono && this.movil){
 			if (this.validarDatosVeterinario(this.dni, this.nombre,this.correo,this.telefono,this.movil)){
 				this.crudService.añadirVeterinario(this.dni, this.nombre,this.correo,this.telefono,this.movil).subscribe(() =>{
 					if(this.crudService.añadido){
@@ -117,14 +117,14 @@ export class VeterinarioComponent implements OnInit {
 						});
 
 						$(".added").modal("toggle");
-						
+						$(".add").modal("hide");
 						$("input").val("");
 
 					}else{
 						$(".error").modal("toggle");
 					}
 				})
-				$(".add").modal("hide");
+				
 			}else{
 				$(".nodata").modal('toggle');
 			}
@@ -173,7 +173,7 @@ export class VeterinarioComponent implements OnInit {
 			self.movil = $('#editar' + self.dni_veterinario + ' .movil').val();	
 
 			if (self.bool_vet){
-				if (self.nombre,self.correo,self.telefono,self.movil){
+				if (self.nombre && self.correo && self.telefono && self.movil){
 					if (self.validarDatosVeterinario(self.dni_veterinario, self.nombre,self.correo,self.telefono,self.movil)){
 						self.crudService.editarVeterinario(self.dni_veterinario, self.nombre, self.correo, self.telefono, self.movil).subscribe(() => {
 							if (self.crudService.modificado){
