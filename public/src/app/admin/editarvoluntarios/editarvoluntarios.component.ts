@@ -94,7 +94,7 @@ export class EditarvoluntariosComponent implements OnInit {
 			self.genero = $('#editar' + self.dni_voluntario + ' .genero').val();
 
 			if (self.bool){
-				if (self.nombre, self.apellidos, self.email, self.direccion, self.tlf, self.movil, self.fecha_nac, self.genero){
+				if (self.nombre && self.apellidos && self.email && self.direccion && self.tlf && self.movil && self.fecha_nac && self.genero){
 
 					if ( self.validarDatosVoluntario(self.dni_voluntario, self.nombre, self.apellidos, self.email, self.tlf, self.movil) ){
 

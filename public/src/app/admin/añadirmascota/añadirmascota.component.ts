@@ -49,7 +49,7 @@ export class AñadirmascotaComponent implements OnInit {
 	validarDatosMascota( chip, nombre, peso, altura, largo) {
 
 		let expresion_chip = /^[0-9]{8}$/;
-		let expresion_nombre = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/;
+		let expresion_nombre = /^([a-zñáéíóúA-ZÑÁÉÍÓÚ]+[\s]*)+$/;
 		let expresion_numeros = /^[0-9]{1,2}(\,[0-9]{2})$/;
 
 		if (expresion_chip.test(chip) && expresion_nombre.test(nombre) && expresion_numeros.test(peso) && expresion_numeros.test(altura) && expresion_numeros.test(largo)){
